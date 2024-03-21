@@ -1,0 +1,26 @@
+---
+import H3 from "@components/ui/H3.astro";
+import { Image } from "astro:assets";
+const { url, frontmatter, className } = Astro.props;
+---
+
+<a
+  href={url}
+  class:list={[
+    "group flex flex-col items-center space-y-5 capitalize",
+    className,
+  ]}
+>
+  <div
+    class="h-[70%] w-full overflow-hidden rounded-lg shadow-xl shadow-black/30"
+  >
+    <Image
+      width={300}
+      height={300}
+      src={frontmatter.image.url}
+      alt={frontmatter.image.alt}
+      class="h-full w-full object-cover duration-300 group-hover:scale-105"
+    />
+  </div>
+  <H3>{frontmatter.title}</H3>
+</a>

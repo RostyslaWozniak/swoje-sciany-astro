@@ -1,0 +1,30 @@
+---
+import H1 from "@components/ui/H1.astro";
+import Text from "@components/ui/Text.astro";
+import ContentLayout from "@layouts/ContentLayout.astro";
+---
+
+<section
+  class="flex h-screen w-full bg-[url('/src/assets/images/background/home-bg.jpg')] bg-cover bg-center"
+>
+  <ContentLayout className="flex w-full items-end justify-end">
+    <div
+      class="max-w-[600px] space-y-5 rounded-[25px] border-2 px-5 py-10 text-white backdrop-blur-xl backdrop-brightness-50"
+    >
+      <H1 className="lg:text-start">Profesjonalny remont dla twojego domu.</H1>
+      <Text className="lg:text-start">
+        Firma z wieloletnim doświadczeniem oferuje kompleksowe usługi z zakresu
+        remontów. Specjalizujemy się w remontach mieszkań, domów oraz obiektów
+        komercyjnych. Nasza solidność, doświadczenie i zespół wysoko
+        wykwalifikowanych fachowców sprawiają, że realizujemy projekty z
+        najwyższą starannością i terminowością. Zadowolenie klienta to nasz
+        priorytet, dlatego stawiamy na transparentność, profesjonalizm i
+        konkurencyjne ceny.
+      </Text>
+      <button
+        class="w-full rounded-[25px] border-2 bg-[#D46363] py-4 text-2xl font-bold"
+        >Skontaktuj się z nami</button
+      >
+    </div>
+  </ContentLayout>
+</section>

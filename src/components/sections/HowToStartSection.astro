@@ -1,0 +1,61 @@
+---
+// components
+import H2 from "@components/ui/H2.astro";
+import H3 from "@components/ui/H3.astro";
+import Text from "@components/ui/Text.astro";
+import ContentLayout from "@layouts/ContentLayout.astro";
+// assets
+import { Image } from "astro:assets";
+import icon1 from "/src/assets/images/icons/svg/hov-to-start-icons/1.svg";
+import icon2 from "/src/assets/images/icons/svg/hov-to-start-icons/2.svg";
+import icon3 from "/src/assets/images/icons/svg/hov-to-start-icons/3.svg";
+import icon4 from "/src/assets/images/icons/svg/hov-to-start-icons/4.svg";
+
+const howToStartData = [
+  {
+    id: 1,
+    title: "Konsultacja",
+    text: "Zadzwoń i skorzystaj z bezpłatnej konsultacji.",
+    icon: icon1,
+  },
+  {
+    id: 2,
+    title: "Wycena",
+    text: "Kosztorysant przyjedzie na miejsce i sporządzi wycenę.",
+    icon: icon2,
+  },
+  {
+    id: 3,
+    title: "Koordynacja",
+    text: "Omówienie etapów pracy i zawarcie umowy.",
+    icon: icon3,
+  },
+  {
+    id: 4,
+    title: "Start",
+    text: "Dostawa materiałów. Remont mieszkania krok po kroku.",
+    icon: icon4,
+  },
+];
+---
+
+<section class="w-full bg-[#535353]">
+  <ContentLayout className="flex flex-col items-center gap-16">
+    <H2> Od Czego Zacząc Remont Mieszkania Pod Klucz? </H2>
+    <div class="flex flex-wrap items-center justify-center gap-10">
+      {
+        howToStartData.map(({ id, title, text, icon }) => (
+          <div class="flex items-center justify-center gap-4 sm:gap-7 lg:w-[250px] lg:flex-col">
+            <Image src={icon} alt={`ikonka ${title}`} class="w-16 sm:w-20" />
+            <div class="w-1/2 lg:w-full">
+              <H3>
+                {id}. {title}
+              </H3>
+              <Text>{text}</Text>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </ContentLayout>
+</section>

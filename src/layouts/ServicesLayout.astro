@@ -1,0 +1,40 @@
+---
+// components
+import H1 from "@components/ui/H1.astro";
+import H2 from "@components/ui/H2.astro";
+import MainLayout from "@layouts/MainLayout.astro";
+import ContentLayout from "./ContentLayout.astro";
+import ServicesCard from "@components/ui/ServicesCard.astro";
+
+const { frontmatter } = Astro.props;
+const { title, description } = frontmatter;
+const services = await Astro.glob("src/pages/usługi/*.md");
+const anotherServices = services.filter(
+  (service) => service.frontmatter.title !== title,
+);
+---
+
+<MainLayout className="py-20" title={`Usługi ${title}`} {description}>
+  <ContentLayout className="w-full space-y-20 ">
+    <H1>Usługi {(<span class="text-[#FFFD4D]">{title}</span>)}</H1>
+    <div
+      class="flex w-full flex-col items-center justify-between gap-10 lg:flex-row lg:items-start"
+    >
+      <div
+        class="prose prose-sm space-y-1 text-white sm:prose-base prose-h3:text-white prose-strong:text-[#FFFD4D]"
+      >
+        <slot />
+      </div>
+      <div class="space-y-12">
+        <H2>Sprawdź inne nasze usługi</H2>
+        <div class="grid grid-cols-2 gap-10">
+          {
+            anotherServices.map((service) => (
+              <ServicesCard className="w-[150px] h-[150px]" {...service} />
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </ContentLayout>
+</MainLayout>

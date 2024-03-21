@@ -1,0 +1,34 @@
+---
+// components
+import H2 from "@components/ui/H2.astro";
+import ServicesCard from "@components/ui/ServicesCard.astro";
+import ContentLayout from "@layouts/ContentLayout.astro";
+
+const services = await Astro.glob("src/pages/usługi/*.md");
+---
+
+<section class="bg-[gray]">
+  <ContentLayout className="flex flex-col items-center gap-12">
+    <H2>Nasze usługi</H2>
+    <div
+      class="flex flex-wrap items-center justify-center gap-2 sm:gap-x-5 md:gap-x-10 lg:gap-x-20"
+    >
+      {
+        services
+          .slice(0, 3)
+          .map((service) => (
+            <ServicesCard
+              url={service.url}
+              frontmatter={service.frontmatter}
+              className="w-[300px] h-[300px]"
+            />
+          ))
+      }
+    </div>
+    <a
+      href="/usługi/"
+      class="rounded-full border-2 bg-[#D46363] px-10 py-2 text-center"
+      >Zobacz więcej usług</a
+    >
+  </ContentLayout>
+</section>
