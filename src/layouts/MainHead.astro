@@ -8,6 +8,7 @@ const { title, description } = Astro.props;
 <head>
   <meta charset="utf-8" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="description" content={description} />
   <meta name="viewport" content="width=device-width" />
   <meta
     name="keywords"
@@ -15,7 +16,6 @@ const { title, description } = Astro.props;
   />
   <meta name="generator" content={Astro.generator} />
   <title>{title}</title>
-  <meta name="description" content={description} />
   <meta name="theme-color" content="#808080" />
   <Seo {title} {description} url={Astro.url} />
   <ViewTransitions />
