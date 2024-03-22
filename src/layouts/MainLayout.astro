@@ -8,10 +8,13 @@ const { title, description, className } = Astro.props;
 
 <html lang="pl">
   <MainHead {title} {description} />
-  <body class="flex min-h-screen flex-col bg-[gray] text-white">
+  <body class="bg-primary text-light flex min-h-screen flex-col">
     <Header />
     <main
-      class:list={["flex grow flex-col items-center justify-center", className]}
+      class:list={[
+        "flex grow flex-col [text-shadow:_1px_1px_0_rgb(0_0_0_)]",
+        className,
+      ]}
     >
       <slot />
     </main>

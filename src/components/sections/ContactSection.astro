@@ -1,0 +1,83 @@
+---
+import bgImage from "@assets/images/background/contact-bg.jpg";
+import H2 from "@components/ui/H2.astro";
+import H3 from "@components/ui/H3.astro";
+import Text from "@components/ui/Text.astro";
+// assets
+import {
+  phoneNumber,
+  email,
+  facebook,
+  instagram,
+} from "@assets/contact-details";
+// contact info
+import phoneIcon from "@assets/images/icons/svg/contact/phone.svg";
+import mailIcon from "@assets/images/icons/svg/contact/mail.svg";
+import facebookIcon from "@assets/images/icons/svg/contact/facebook.svg";
+import instagramIcon from "@assets/images/icons/svg/contact/instagram.svg";
+// lib
+import { Image } from "astro:assets";
+import ContentLayout from "@layouts/ContentLayout.astro";
+
+const contactDescriptionArr = [
+  {
+    name: "phone-number",
+    value: phoneNumber,
+    icon: phoneIcon,
+    action: "tel",
+  },
+  { name: "email", value: email, icon: mailIcon, action: "mailto" },
+  {
+    name: "Swoje Ściany ",
+    value: facebook,
+    icon: facebookIcon,
+    action: null,
+  },
+  {
+    name: "swoje_sciany",
+    value: instagram,
+    icon: instagramIcon,
+    action: null,
+  },
+];
+---
+
+<section
+  id="contact"
+  class="bg-[url('src/assets/images/background/contact-bg.jpg')] bg-cover bg-center bg-no-repeat"
+>
+  <ContentLayout>
+    <H2 className="pb-16 ">Kontakt</H2>
+    <div
+      class="flex flex-col items-center gap-5 px-2 lg:flex-row lg:items-stretch lg:justify-between"
+    >
+      <div
+        class="flex w-[min(500px,100%)] flex-col justify-around rounded-2xl border px-5 py-10 text-center backdrop-blur-xl backdrop-brightness-50 lg:px-10"
+      >
+        <H3>Skontaktuj Się z Nami</H3>
+        <Text>
+          Jeśli planujesz remont mieszkania czy budynku, chętnie poznamy
+          szczegóły Twojego projektu i zaproponujemy indywidualne podejście.
+          Skontaktuj się z nami, a my pomożemy Ci zrealizować Twoje marzenia o
+          idealnym wnętrzu!
+        </Text>
+      </div>
+      <div class="flex w-[min(500px,100%)] flex-col gap-5">
+        {
+          contactDescriptionArr.map(({ name, value, icon, action }, index) => (
+            <a
+              href={action ? `${action}: ${value}` : value}
+              target={action ? "_self" : "_blank"}
+              class="bg-accent flex h-16 items-center justify-between overflow-hidden rounded-2xl border px-2 py-2 opacity-70 transition-opacity duration-300 hover:opacity-100 lg:p-5"
+            >
+              <Image src={icon} alt={`${name} icon`} class="w-14" />
+              <p class="w-full text-center text-base md:text-2xl">
+                {action ? value : name}
+              </p>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </ContentLayout>
+</section>

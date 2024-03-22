@@ -8,8 +8,8 @@ const services = await Astro.glob("src/pages/usługi/*.md");
 ---
 
 <section class="bg-[gray]">
-  <ContentLayout className="flex flex-col items-center gap-12">
-    <H2>Nasze usługi</H2>
+  <ContentLayout className="flex flex-col items-center py-10">
+    <H2 className="mb-10">Nasze usługi</H2>
     <div
       class="flex flex-wrap items-center justify-center gap-2 sm:gap-x-5 md:gap-x-10 lg:gap-x-20"
     >
@@ -27,7 +27,7 @@ const services = await Astro.glob("src/pages/usługi/*.md");
     </div>
     <a
       href="/usługi/"
-      class="rounded-full border-2 bg-[#D46363] px-10 py-2 text-center"
+      class="bg-accent rounded-full border-2 px-10 py-2 text-center"
       >Zobacz więcej usług</a
     >
   </ContentLayout>
