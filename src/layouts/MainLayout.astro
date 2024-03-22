@@ -3,7 +3,11 @@ import MainHead from "@layouts/MainHead.astro";
 import Footer from "@components/Footer.astro";
 import Header from "@components/Header.astro";
 
-const { title, description, className } = Astro.props;
+const {
+  title = "Swoje Ściany",
+  description = "Profesjonalne remonty mieszkań, domów i obiektów komercyjnych.",
+  className,
+} = Astro.props;
 ---
 
 <html lang="pl">

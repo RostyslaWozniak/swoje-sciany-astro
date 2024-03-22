@@ -1,5 +1,6 @@
 ---
 import { ViewTransitions } from "astro:transitions";
+import Seo from "@components/Seo.astro";
 
 const { title, description } = Astro.props;
 ---
@@ -12,8 +13,13 @@ const { title, description } = Astro.props;
     href="/src/assets/images/logo/logo.svg"
   />
   <meta name="viewport" content="width=device-width" />
+  <meta
+    name="keywords"
+    content="remont mieszkań, remont budynków, usługi remontowe, renowacja wnętrz, remonty Warszawa, remont Warszawa"
+  />
   <meta name="generator" content={Astro.generator} />
   <title>{title}</title>
   <meta name="description" content={description} />
+  <Seo {title} {description} url={Astro.url} />
   <ViewTransitions />
 </head>

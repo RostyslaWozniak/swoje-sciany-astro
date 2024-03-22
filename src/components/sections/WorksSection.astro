@@ -1,51 +1,11 @@
 ---
 import ContentLayout from "@layouts/ContentLayout.astro";
-import { Image } from "astro:assets";
-import image1 from "@assets/images/gallery/img-12.jpg";
-import image2 from "@assets/images/gallery/img-11.jpg";
-import image3 from "@assets/images/gallery/img-10.jpg";
-import image4 from "@assets/images/gallery/img-9.jpg";
-import image5 from "@assets/images/gallery/img-8.jpg";
-import image6 from "@assets/images/gallery/img-7.jpg";
-import image7 from "@assets/images/gallery/img-6.jpg";
-import image8 from "@assets/images/gallery/img-5.jpg";
-import image9 from "@assets/images/gallery/img-4.jpg";
-import image10 from "@assets/images/gallery/img-3.jpg";
-import image11 from "@assets/images/gallery/img-2.jpg";
-import image12 from "@assets/images/gallery/img-1.jpg";
-
-const images = [
-  image1,
-  image2,
-  image3,
-  image4,
-  image5,
-  image6,
-  image7,
-  image8,
-  image9,
-  image10,
-  image11,
-  image12,
-];
+import { ImageGallery } from "@components/ImageGallery";
 ---
 
-<section class="py-12">
-  <ContentLayout className="px-0">
+<section id="realizacje" class="bg-primary">
+  <ContentLayout>
     <h2 class="text-center text-3xl font-bold">Realizacje</h2>
-    <div
-      class="flex snap-x snap-mandatory items-center gap-5 overflow-x-scroll px-2.5 py-12 scrollbar-hide sm:flex-wrap sm:justify-center sm:gap-10"
-    >
-      {
-        images.map((img, i) => (
-          <Image
-            src={img}
-            client:visible
-            alt="zdjęcie realizacji remontu"
-            class="h-full w-[90vw] snap-center rounded-xl shadow-xl shadow-black/30 sm:w-[300px]"
-          />
-        ))
-      }
-    </div>
+    <ImageGallery client:load client:only />
   </ContentLayout>
 </section>

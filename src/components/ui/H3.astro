@@ -1,4 +1,6 @@
 ---
+import { cn } from "@utils/cn";
+
 type Props = {
   className?: string;
 };
@@ -6,6 +8,6 @@ type Props = {
 const { className } = Astro.props as Props;
 ---
 
-<h3 class:list={["text-center text-xl  md:text-2xl", className]}>
+<h3 class:list={cn("text-center text-xl  md:text-2xl", className)}>
   <slot />
 </h3>

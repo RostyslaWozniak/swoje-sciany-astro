@@ -1,15 +1,16 @@
 ---
 import H3 from "@components/ui/H3.astro";
+import { cn } from "@utils/cn";
 import { Image } from "astro:assets";
 const { url, frontmatter, className } = Astro.props;
 ---
 
 <a
   href={url}
-  class:list={[
+  class:list={cn(
     "group flex flex-col items-center space-y-5 capitalize",
     className,
-  ]}
+  )}
 >
   <div
     class="h-[70%] w-full overflow-hidden rounded-lg shadow-xl shadow-black/30"

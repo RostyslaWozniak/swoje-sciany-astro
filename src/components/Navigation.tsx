@@ -22,6 +22,10 @@ export const Navigation = () => {
   const [toogled, setToogled] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
+const handleCloseNav = () => {
+  setTimeout(() => setToogled(false), 300);
+}
+
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
     window.addEventListener("resize", handleResize);
@@ -36,34 +40,42 @@ export const Navigation = () => {
           className=" flex items-center justify-center gap-16"
         >
           <li>
+            <a href="/">Główna</a>
+          </li>
+          <li>
             <a href="/usługi/">Usługi</a>
           </li>
           <li>
-            <a href="#works">Realizacje</a>
+            <a href="/#realizacje">Realizacje</a>
           </li>
           <li>
-            <a href="#contact">Kontakt</a>
+            <a href="/contact">Kontakt</a>
           </li>
         </ul>
         </nav>
       )
     }
       {matches && toogled && (
-          <motion.nav            
+          <motion.nav 
+          onClick={handleCloseNav}           
             variants={navMotion}  
             animate="visible"
+            exit="hidden"
             initial="hidden" className="fixed flex inset-0 h-screen w-screen flex-col items-center justify-center text-2xl bg-gradient-to-b from-[#404040] from-[64px] to-primary to-[64px] -z-10">
         <ul 
         className="space-y-8 text-center"
         >
           <motion.li variants={itemMotion}>
+            <a href="/">Główna</a>
+          </motion.li>
+          <motion.li variants={itemMotion}> 
             <a href="/usługi/">Usługi</a>
           </motion.li>
           <motion.li variants={itemMotion}>
-            <a href="#works">Realizacje</a>
+            <a href="/#realizacje">Realizacje</a>
           </motion.li>
           <motion.li variants={itemMotion}>
-            <a href="#contact">Kontakt</a>
+            <a href="/contact">Kontakt</a>
           </motion.li>
         </ul>
         </motion.nav>
