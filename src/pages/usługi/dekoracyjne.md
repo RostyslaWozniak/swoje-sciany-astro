@@ -3,7 +3,7 @@ title: "dekoracyjne"
 layout: "src/layouts/ServicesLayout.astro"
 image:
   {
-    url: "/src/pages/usługi/images/dekoracyjne.jpg",
+    url: "/src/assets/images/services/dekoracyjne.jpg",
     alt: "obraz dekoracyjnej usługi",
   }
 description: "Opis usługi Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, nobis."

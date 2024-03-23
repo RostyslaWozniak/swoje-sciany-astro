@@ -3,8 +3,8 @@ title: "elektryczne"
 layout: "src/layouts/ServicesLayout.astro"
 image:
   {
-    url: "/src/pages/usługi/images/elektryczne.jpg",
-    alt: "obraz układania podłogi",
+    url: "/src/assets/images/services/elektryczne.jpg",
+    alt: "obraz elektrycznej naprawy",
   }
 description: "Opis usługi Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, nobis."
 ---

@@ -2,10 +2,7 @@
 title: "tynkarskie"
 layout: "src/layouts/ServicesLayout.astro"
 image:
-  {
-    url: "/src/pages/usługi/images/tynkarskie.jpg",
-    alt: "obraz układania podłogi",
-  }
+  { url: "/src/assets/images/services/tynkarskie.jpg", alt: "obraz tynkowania" }
 description: "Opis usługi Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, nobis."
 ---
 

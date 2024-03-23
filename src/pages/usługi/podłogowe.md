@@ -3,7 +3,7 @@ title: "podłogowe"
 layout: "src/layouts/ServicesLayout.astro"
 image:
   {
-    url: "/src/pages/usługi/images/podłogowe.jpg",
+    url: "/src/assets/images/services/podłogowe.jpg",
     alt: "obraz układania podłogi",
   }
 description: "Opis usługi Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, nobis."
