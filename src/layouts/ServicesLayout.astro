@@ -16,12 +16,12 @@ const anotherServices = services.filter(
 
 <MainLayout className="py-20" title={`Usługi ${title}`} {description}>
   <ContentLayout className="w-full space-y-20 ">
-    <H1>Usługi {(<span class="text-accent">{title}</span>)}</H1>
+    <H1>Usługi {(<span class="text-orange-300">{title}</span>)}</H1>
     <div
       class="flex w-full flex-col items-center justify-between gap-10 lg:flex-row lg:items-start"
     >
       <div
-        class="prose prose-sm space-y-1 text-white sm:prose-base prose-h3:text-white prose-strong:font-bold prose-strong:text-accent"
+        class="prose-strong:font-bolder prose prose-sm space-y-1 text-white sm:prose-base prose-h3:text-white prose-strong:text-orange-300"
       >
         <slot />
       </div>
