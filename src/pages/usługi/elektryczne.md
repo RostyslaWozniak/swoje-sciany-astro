@@ -1,11 +1,7 @@
 ---
 title: "elektryczne"
 layout: "src/layouts/ServicesLayout.astro"
-image:
-  {
-    url: "/src/assets/images/services/elektryczne.jpg",
-    alt: "obraz elektrycznej naprawy",
-  }
+image: { url: "/images/elektryczne.jpg", alt: "obraz elektrycznej naprawy" }
 description: "Opis usługi Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, nobis."
 ---
 

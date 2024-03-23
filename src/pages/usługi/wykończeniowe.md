@@ -2,10 +2,7 @@
 title: "wykończeniowe"
 layout: "src/layouts/ServicesLayout.astro"
 image:
-  {
-    url: "/src/assets/images/services/wykończeniowe.jpg",
-    alt: "obraz wykonczonego mieszkania",
-  }
+  { url: "/images/wykończeniowe.jpg", alt: "obraz wykonczonego mieszkania" }
 description: "Opis usługi Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, nobis."
 ---
 

@@ -1,11 +1,7 @@
 ---
 title: "glazurnicze"
 layout: "src/layouts/ServicesLayout.astro"
-image:
-  {
-    url: "/src/assets/images/services/glazurnicze.jpg",
-    alt: "obraz układania glazur",
-  }
+image: { url: "/images/glazurnicze.jpg", alt: "obraz układania glazur" }
 description: "Opis usługi Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, nobis."
 ---
 

@@ -1,8 +1,7 @@
 ---
 title: "tynkarskie"
 layout: "src/layouts/ServicesLayout.astro"
-image:
-  { url: "/src/assets/images/services/tynkarskie.jpg", alt: "obraz tynkowania" }
+image: { url: "/images/tynkarskie.jpg", alt: "obraz tynkowania" }
 description: "Opis usługi Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, nobis."
 ---
 

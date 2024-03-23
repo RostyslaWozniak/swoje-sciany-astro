@@ -1,11 +1,7 @@
 ---
 title: "hydrauliczne"
 layout: "src/layouts/ServicesLayout.astro"
-image:
-  {
-    url: "/src/assets/images/services/hydrauliczne.jpg",
-    alt: "obraz naprawy rur",
-  }
+image: { url: "/images/hydrauliczne.jpg", alt: "obraz naprawy rur" }
 description: "Opis usługi Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, nobis."
 ---
 
