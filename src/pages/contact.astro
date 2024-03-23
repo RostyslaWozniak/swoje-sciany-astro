@@ -50,7 +50,7 @@ const contactDescriptionArr = [
         <Image
           src={bgImage}
           alt="tło"
-          class="absolute left-0 top-16 -z-10 h-[300px] w-screen object-cover brightness-75 sm:h-full sm:blur-sm"
+          class="absolute left-0 top-16 -z-10 h-[300px] w-screen object-cover shadow-[0_10px_80px_40px_rgba(0,0,0,0.3)] brightness-75 sm:h-full sm:blur-sm"
         />
         <H1 className="relative">Masz pytania? <br />Skontaktuj się z nami.</H1>
         <Text className="relative  w-[min(500px,100%)] "
@@ -61,14 +61,14 @@ const contactDescriptionArr = [
         >
       </div>
       <div
-        class="relative z-20 flex h-full translate-y-10 flex-col content-center items-center justify-center gap-5 sm:translate-y-0"
+        class="relative z-20 flex h-full translate-y-10 flex-col content-center items-center justify-center gap-7 sm:translate-y-0"
       >
         {
           contactDescriptionArr.map(({ name, value, icon, action }, index) => (
             <a
               href={action ? `${action}: ${value}` : value}
               target={action ? "_self" : "_blank"}
-              class="flex h-16 w-[min(500px,100%)] items-center justify-between overflow-hidden rounded-2xl border bg-accent px-2 py-2 lg:p-5"
+              class="flex h-16 w-[min(500px,100%)] items-center justify-between overflow-hidden rounded-2xl border bg-accent/80 px-2 py-2 shadow-[0_0_10px_1px_rgba(0,0,0,0.5)] lg:p-5"
             >
               <Image src={icon} alt={`${name} icon`} class="w-14" />
               <p class="w-full text-center text-base md:text-2xl">

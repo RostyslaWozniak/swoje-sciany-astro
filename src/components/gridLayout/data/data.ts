@@ -11,7 +11,7 @@ import images10 from "@assets/images/gallery/img-10.jpg";
 import images11 from "@assets/images/gallery/img-11.jpg";
 import images12 from "@assets/images/gallery/img-12.jpg";
 
-export const images = [
+export const gridImages = [
   {
     id: 1,
     className: "md:col-span-2",
@@ -73,3 +73,7 @@ export const images = [
     img: images8,
   },
 ];
+
+export const scrollImages = [
+  images7, images8, images9, images10, images11, images12, images1, images2, images3, images4, images5, images6
+]

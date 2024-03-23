@@ -17,7 +17,7 @@ const ImageDots = ({ handleClick, images, selectedId }: ImageDotsProps) => {
           key={index}
           onClick={() => handleClick(index + 1)}
           className={cn(
-            'aspect-square w-4 bg-white cursor-pointer  rounded-full',
+            'aspect-square w-4 bg-white cursor-pointer  rounded-full border-2',
             className,
             selectedId === index + 1 && 'bg-black'
           )}

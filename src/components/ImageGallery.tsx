@@ -1,6 +1,8 @@
 import { LayoutGrid } from "@components/gridLayout/LayoutGrid";
-import { images } from "@components/gridLayout/data/data";  
+import { gridImages, scrollImages } from "@components/gridLayout/data/data";  
 import { useEffect, useState } from "react";
+import { ScrollGallery } from "./ScrollGallery";
+
 
 export const ImageGallery = () => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -13,25 +15,9 @@ export const ImageGallery = () => {
   return (
   <section>
     {!matches ? (
-         <div className="relative h-[900px] w-full  py-20">
-
-             <LayoutGrid images={images} />
-         </div>
+      <LayoutGrid images={gridImages} />
     ) : (
-    <div
-      className="flex snap-x snap-mandatory items-center gap-5 overflow-x-scroll px-2.5 py-12 scrollbar-hide "
-    >
-      {
-        images.map((img, i) => (
-          <img
-          key={i}
-            src={img.img.src}
-            alt="zdjęcie realizacji remontu"
-            className="h-full w-[90vw] snap-center rounded-xl shadow-xl shadow-black/30 sm:w-[300px]"
-          />
-        ))
-      }
-    </div>
+      <ScrollGallery images={scrollImages} />
     )}
   </section>
   )

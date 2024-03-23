@@ -55,7 +55,7 @@ export const LayoutGrid = ({ images }: { images: Image[] }) => {
     }
   };
   return (
-    <div className="h-full  grid grid-cols-1 md:grid-cols-6 max-w-7xl mx-auto ">
+    <div className="relative h-[900px] w-full  py-20 grid grid-cols-1 md:grid-cols-6 max-w-7xl mx-auto ">
       {/* LEFT ARROW */}
       {selectedId && <LeftChevron onClick={handlePrevImage} />}
       {/* IMAGES */}
