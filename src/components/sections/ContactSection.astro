@@ -1,7 +1,7 @@
 ---
 // components
 import MainLayout from "@layouts/MainLayout.astro";
-import H1 from "@components/ui/H1.astro";
+import H2 from "@components/ui/H2.astro";
 import Text from "@components/ui/Text.astro";
 import ContentLayout from "@layouts/ContentLayout.astro";
 // lib import
@@ -43,7 +43,7 @@ const contactDescriptionArr = [
 ];
 ---
 
-<section class="bg-primary relative">
+<section class="relative bg-gradient-to-b from-[#4a301c] to-primary">
   <ContentLayout className="flex flex-col">
     <div class="z-20 flex h-[300px] flex-col items-center gap-5">
       <Image
@@ -51,7 +51,7 @@ const contactDescriptionArr = [
         alt="tło"
         class="absolute left-0 top-0 -z-10 h-[300px] w-screen object-cover brightness-75 sm:h-full sm:blur-sm"
       />
-      <H1 className="relative">Masz pytania? <br />Skontaktuj się z nami. </H1>
+      <H2 className="relative">Masz pytania? <br />Skontaktuj się z nami. </H2>
       <Text className="relative  w-[min(500px,100%)] "
         >Jeśli planujesz remont mieszkania czy budynku, chętnie poznamy
         szczegóły Twojego projektu i zaproponujemy indywidualne podejście.
@@ -67,7 +67,7 @@ const contactDescriptionArr = [
           <a
             href={action ? `${action}: ${value}` : value}
             target={action ? "_self" : "_blank"}
-            class="bg-accent flex h-16 w-[min(500px,100%)] items-center justify-between overflow-hidden rounded-2xl border px-2 py-2 lg:p-5"
+            class="flex h-16 w-[min(500px,100%)] items-center justify-between overflow-hidden rounded-2xl border bg-accent px-2 py-2 shadow-2xl lg:p-5"
           >
             <Image src={icon} alt={`${name} icon`} class="w-14" />
             <Text className="w-full text-xl md:text-2xl">

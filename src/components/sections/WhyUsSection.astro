@@ -42,15 +42,15 @@ const whyUsData = [
     {
       whyUsData.map(({ image, title, text }, i) => (
         <div
-          class=" md:flex"
+          class=" shadow-xl md:flex"
           style={{ flexDirection: i === 1 ? "row-reverse" : "row" }}
         >
           <Image class="w-[100%] md:w-[50%]" src={image.url} alt={image.alt} />
-          <div class="bg-secondary/50 flex w-[100%] flex-col items-start justify-center gap-10 p-5 sm:p-10 md:w-[50%]">
+          <div class="flex w-[100%] flex-col items-start justify-center gap-10 bg-[#B4B4B4] p-5 sm:p-10 md:w-[50%]">
             <H3 className="border-accent border-l-4 py-1 pl-5 font-bold">
               {title}
             </H3>
-            <p>{text}</p>
+            <p class="sm:text-lg">{text}</p>
           </div>
         </div>
       ))
