@@ -1,0 +1,129 @@
+#loader-container {
+  position: fixed;
+  height: 100dvh;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background-color: var(--secondary-color);
+  z-index: 999;
+}
+#loader-container svg #left-vertical-stroke {
+  animation: 2s linear left-vertical-stroke-animation;
+}
+#loader-container svg #left-diagonal-stroke {
+  animation: 2s linear left-diagonal-stroke-animation;
+}
+#loader-container svg #right-diagonal-stroke {
+  animation: 2s linear right-diagonal-stroke-animation;
+}
+#loader-container svg #right-vartical-stroke {
+  animation: 2s linear right-vertical-stroke-animation;
+}
+#loader-container svg #bottom-word {
+  animation: 1s linear bottom-word-animation;
+}
+#loader-container svg #top-word {
+  animation: 1s linear top-word-animation;
+}
+#chimney {
+  animation: 2s linear chimney;
+}
+/* TOP WORD */
+@keyframes top-word-animation {
+  0%,
+  30% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+/* chimney */
+@keyframes chimney {
+  0%,
+  90% {
+    fill: transparent;
+    stroke-dashoffset: 0%;
+  }
+  100% {
+    fill: black;
+    stroke-dashoffset: 100%;
+  }
+}
+
+/* 1 */
+@keyframes left-vertical-stroke-animation {
+  0%,
+  90% {
+    stroke: transparent;
+    stroke-dashoffset: 0%;
+    stroke-dasharray: 0% 100%;
+  }
+  90%,
+  100% {
+    stroke: black;
+    stroke-dashoffset: 100%;
+    stroke-dasharray: 100% 0;
+  }
+}
+/* 2 */
+@keyframes left-diagonal-stroke-animation {
+  0% {
+    stroke: transparent;
+    stroke-dashoffset: 0%;
+    stroke-dasharray: 0 100%;
+  }
+  50%,
+  100% {
+    stroke: black;
+    stroke-dashoffset: 100%;
+    stroke-dasharray: 100% 0;
+  }
+}
+/* 3 */
+@keyframes right-diagonal-stroke-animation {
+  0% {
+    stroke: transparent;
+    stroke-dashoffset: 0%;
+    stroke-dasharray: 0 100%;
+  }
+  50%,
+  100% {
+    stroke: black;
+    stroke-dashoffset: 100%;
+    stroke-dasharray: 100% 0;
+  }
+}
+/* 4 */
+@keyframes right-vertical-stroke-animation {
+  0%,
+  90% {
+    stroke: transparent;
+    stroke-dashoffset: 0%;
+    stroke-dasharray: 0% 100%;
+  }
+  90%,
+  100% {
+    stroke: black;
+    stroke-dashoffset: 100%;
+    stroke-dasharray: 100% 0;
+  }
+}
+/* BOTTOM WORD */
+@keyframes bottom-word-animation {
+  0%,
+  30% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes bg-disappear {
+  30%,
+  100% {
+    opacity: 0;
+  }
+}
