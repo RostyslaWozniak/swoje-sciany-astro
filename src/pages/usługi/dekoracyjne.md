@@ -3,8 +3,8 @@ title: "dekoracyjne"
 layout: "src/layouts/ServicesLayout.astro"
 image:
   {
-    url: "https://en.idei.club/uploads/posts/2023-04/1682441230_en-idei-club-p-decoration-construction-design-1.jpg",
-    alt: "obraz układania podłogi",
+    url: "/src/pages/usługi/images/dekoracyjne.jpg",
+    alt: "obraz dekoracyjnej usługi",
   }
 description: "Opis usługi Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, nobis."
 ---

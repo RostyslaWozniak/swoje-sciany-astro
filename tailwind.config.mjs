@@ -9,6 +9,9 @@ export default {
         dark: "#434343",
         light: "#B4B4B4",
         accent: "#ec7a1c"
+      },
+      boxShadow: {
+        castom: "0 0 10px 1px rgba(0,0,0,0.5)"
       }
     },
   },
