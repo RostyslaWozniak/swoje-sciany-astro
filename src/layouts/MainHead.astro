@@ -8,11 +8,11 @@ const { title, description } = Astro.props;
 <head>
   <meta charset="utf-8" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <meta name="description" content={description} />
+  <meta content={description} name="description" />
   <meta name="viewport" content="width=device-width" />
   <meta
-    name="keywords"
     content="remont mieszkań, remont budynków, usługi remontowe, renowacja wnętrz, remonty Warszawa, remont Warszawa"
+    name="keywords"
   />
   <meta name="generator" content={Astro.generator} />
   <title>{title}</title>
