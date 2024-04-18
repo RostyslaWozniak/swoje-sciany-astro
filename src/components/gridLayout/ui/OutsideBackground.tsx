@@ -1,7 +1,7 @@
 /** @format */
 
-import { cn } from '@utils/cn';
-import { motion } from 'framer-motion';
+import { cn } from "@utils/cn";
+import { motion } from "framer-motion";
 type OutsideBackgroundProps = {
   handleOutsideClick: () => void;
   selectedId: number | null;
@@ -14,10 +14,10 @@ const OutsideBackground = ({
     <motion.div
       onClick={handleOutsideClick}
       className={cn(
-        'fixed h-full w-full left-0 top-0 bg-black opacity-0 z-10 duration-300',
+        "fixed left-0 top-0 z-10 h-full w-full  bg-black opacity-0 duration-300",
         selectedId
-          ? 'pointer-events-auto opacity-60 z-40'
-          : 'pointer-events-none'
+          ? "pointer-events-auto z-40 opacity-60"
+          : "pointer-events-none",
       )}
     />
   );

@@ -49,7 +49,7 @@ const DisplayImages = ({
             layout
             onClick={() => handleClick(id)}
             className={cn(
-              "relative cursor-pointer overflow-hidden ",
+              "relative cursor-pointer overflow-hidden border-2",
               selectedId === id
                 ? className === "col-span-1"
                   ? // if image is opened vertical

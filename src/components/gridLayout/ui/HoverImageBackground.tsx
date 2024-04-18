@@ -1,11 +1,15 @@
 /** @format */
 
-import { motion } from 'framer-motion';
+import { cn } from "@utils/cn";
+import { motion } from "framer-motion";
 
-const HoverImageBackground = () => {
+const HoverImageBackground = ({ className }: { className?: string }) => {
   return (
     <motion.span
-      className="absolute inset-0 h-full w-full  bg-light z-10  block  rounded-3xl"
+      className={cn(
+        "absolute inset-0 block  h-full w-full  rounded-3xl  bg-light",
+        className,
+      )}
       layoutId="hoverBackground"
       initial={{ opacity: 0 }}
       animate={{

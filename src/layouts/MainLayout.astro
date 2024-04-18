@@ -3,7 +3,6 @@ import MainHead from "@layouts/MainHead.astro";
 import Footer from "@components/Footer.astro";
 import Header from "@components/Header.astro";
 import { Cookies } from "@components/Cookies";
-// import LogoAnimation from "@components/LogoAnimation/LogoAnimation";
 
 const {
   title = "Swoje Ściany",
@@ -24,7 +23,6 @@ const {
     >
       <slot />
       <Cookies client:load />
-      <!-- <LogoAnimation client:load /> -->
     </main>
     <Footer />
   </body>

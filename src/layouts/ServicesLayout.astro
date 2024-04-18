@@ -7,25 +7,34 @@ import ContentLayout from "./ContentLayout.astro";
 import ServicesCard from "@components/ui/ServicesCard.astro";
 
 const { frontmatter } = Astro.props;
-const { title, description } = frontmatter;
+const { title, description, image } = frontmatter;
 const services = await Astro.glob("src/pages/usługi/*.md");
 const anotherServices = services.filter(
   (service) => service.frontmatter.title !== title,
 );
 ---
 
-<MainLayout className="py-20" title={`Usługi ${title}`} {description}>
+<MainLayout
+  className="bg-[#6e6e6e] py-20"
+  title={`Usługi ${title}`}
+  {description}
+>
   <ContentLayout className="w-full space-y-20 ">
     <H1>Usługi {(<span class="text-orange-300">{title}</span>)}</H1>
     <div
       class="flex w-full flex-col items-center justify-between gap-10 lg:flex-row lg:items-start"
     >
       <div
-        class="prose-strong:font-bolder prose prose-sm space-y-1 text-white sm:prose-base prose-h3:text-white prose-strong:text-orange-300"
+        class="prose prose-sm space-y-1 text-white [text-shadow:_0px_0px_0_rgb(5_5_5_)] sm:prose-base prose-h3:text-white prose-strong:text-orange-300 prose-strong:[text-shadow:_1px_1px_0_rgb(5_5_5_)]"
       >
         <slot />
       </div>
-      <div class="space-y-12">
+      <div class="flex flex-col items-center space-y-12">
+        <img
+          src={image.url}
+          alt=""
+          class="hidden h-[300px] w-[500px] rounded-2xl border-2 object-cover sm:block"
+        />
         <H2>Sprawdź inne nasze usługi</H2>
         <div class="grid grid-cols-2 gap-10">
           {

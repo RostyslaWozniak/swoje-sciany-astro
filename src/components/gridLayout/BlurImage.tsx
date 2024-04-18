@@ -1,8 +1,8 @@
 /** @format */
 
-import { useState } from 'react';
-import { cn } from '@utils/cn';
-import { motion } from 'framer-motion';
+import { useState } from "react";
+import { cn } from "@utils/cn";
+import { motion } from "framer-motion";
 
 export const BlurImage = ({
   src,
@@ -18,10 +18,10 @@ export const BlurImage = ({
       src={src}
       onLoad={() => setLoaded(true)}
       className={cn(
-        'absolute inset-0 h-full w-full',
+        "absolute inset-0 h-full w-full",
         isHovered &&
-          'scale-[101%] hover:scale-110 duration-300 hover:brightness-75',
-        loaded ? 'blur-none' : 'blur-md'
+          "scale-[101%] duration-300 hover:scale-110 hover:brightness-75",
+        loaded ? "blur-none" : "blur-md",
       )}
       alt="thumbnail"
     />

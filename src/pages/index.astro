@@ -7,12 +7,14 @@ import WorksSection from "@components/sections/WorksSection.astro";
 import WhyUsSection from "@components/sections/WhyUsSection.astro";
 import ContactSection from "@components/sections/ContactSection.astro";
 import MainLayout from "@layouts/MainLayout.astro";
+import LogoAnimation from "@components/LogoAnimation/LogoAnimation";
 ---
 
 <MainLayout
   title="Swoje Ściany"
   description="Profesjonalne remonty mieszkań, domów i obiektów komercyjnych."
 >
+  <LogoAnimation client:load />
   <HomeSection />
   <ServicesSection />
   <HowToStartSection />

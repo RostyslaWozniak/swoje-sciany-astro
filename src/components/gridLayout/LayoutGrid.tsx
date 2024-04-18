@@ -1,17 +1,17 @@
 /** @format */
-import { useState } from 'react';
+import { useEffect, useState } from "react";
 
-import { LeftChevron, RightChevron } from './ui/Chevron';
-import ImageDots from './ui/ImageDots';
-import OutsideBackground from './ui/OutsideBackground';
-import DisplayImages from './DisplayImages';
+import { LeftChevron, RightChevron } from "./ui/Chevron";
+import ImageDots from "./ui/ImageDots";
+import OutsideBackground from "./ui/OutsideBackground";
+import DisplayImages from "./DisplayImages";
 
 export type Image = {
   id: number;
   className?: string;
   img: {
     format: string;
-    height : number;
+    height: number;
     src: string;
     width: number;
   };
@@ -30,8 +30,10 @@ export const LayoutGrid = ({ images }: { images: Image[] }) => {
     setLastSelectedId(selectedId);
     setSelectedId(null);
   };
-  const handleNextImage = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    e.stopPropagation();
+  const handleNextImage = (
+    e?: React.MouseEvent<HTMLDivElement, MouseEvent>,
+  ) => {
+    e?.stopPropagation();
     if (selectedId) {
       const nextImage = images.find((el) => el.id === selectedId + 1);
       setLastSelectedId(selectedId);
@@ -42,8 +44,10 @@ export const LayoutGrid = ({ images }: { images: Image[] }) => {
       setSelectedId(nextImage.id);
     }
   };
-  const handlePrevImage = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    e.stopPropagation();
+  const handlePrevImage = (
+    e?: React.MouseEvent<HTMLDivElement, MouseEvent>,
+  ) => {
+    e?.stopPropagation();
     if (selectedId) {
       const nextImage = images.find((el) => el.id === selectedId - 1);
       setLastSelectedId(selectedId);
@@ -54,8 +58,24 @@ export const LayoutGrid = ({ images }: { images: Image[] }) => {
       setSelectedId(nextImage.id);
     }
   };
+  const handleKeyDown = (e: KeyboardEvent) => {
+    if (e.key === "ArrowRight") {
+      handleNextImage();
+    }
+    if (e.key === "ArrowLeft") {
+      handlePrevImage();
+    }
+    if (e.key === "Escape") {
+      handleOutsideClick();
+    }
+  };
+  useEffect(() => {
+    if (!selectedId) return;
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [selectedId]);
   return (
-    <div className="relative h-[900px] w-full  py-20 grid grid-cols-1 md:grid-cols-6 max-w-7xl mx-auto ">
+    <div className="relative mx-auto grid  h-[900px] w-full max-w-7xl grid-cols-1 py-20 md:grid-cols-6 ">
       {/* LEFT ARROW */}
       {selectedId && <LeftChevron onClick={handlePrevImage} />}
       {/* IMAGES */}
