@@ -1,7 +1,7 @@
 ---
 // components
 import { DisplayServices } from "@components/DisplayServices";
-import H2 from "@components/ui/H2.astro";
+import H1 from "@components/ui/H1.astro";
 import ContentLayout from "@layouts/ContentLayout.astro";
 import MainLayout from "@layouts/MainLayout.astro";
 
@@ -9,9 +9,9 @@ const services = await Astro.glob("src/pages/usługi/*.md");
 ---
 
 <MainLayout title="Swoje Ściany - Usługi" description="Nasze usługi">
-  <section class="bg-[gray] py-10">
+  <section class="bg-[gray] py-14">
     <ContentLayout>
-      <H2 className="pb-20">Nasze usługi</H2>
+      <H1 className="pb-20">Nasze usługi</H1>
 
       <DisplayServices
         data={services}

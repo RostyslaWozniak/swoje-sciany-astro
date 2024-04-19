@@ -1,0 +1,15 @@
+---
+import { ImageGallery } from "@components/ImageGallery";
+import H1 from "@components/ui/H1.astro";
+import ContentLayout from "@layouts/ContentLayout.astro";
+import MainLayout from "@layouts/MainLayout.astro";
+---
+
+<MainLayout title="Swoje Ściany - Kontakt" description="Strona kontaktowa">
+  <section class="relative bg-primary">
+    <ContentLayout className="flex flex-col">
+      <H1 className="pt-14 text-center text-3xl font-bold">Realizacje</H1>
+      <ImageGallery client:load client:only />
+    </ContentLayout>
+  </section>
+</MainLayout>

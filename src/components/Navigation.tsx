@@ -22,86 +22,88 @@ export const Navigation = () => {
   const [toogled, setToogled] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
-const handleCloseNav = () => {
-  setTimeout(() => setToogled(false), 300);
-}
+  const handleCloseNav = () => {
+    setTimeout(() => setToogled(false), 300);
+  };
 
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, [windowWidth])
+  }, [windowWidth]);
   const matches = windowWidth <= 1024;
   return (
-    <>{
-      !matches && (
+    <>
+      {!matches && (
         <nav>
-        <ul
-          className=" flex items-center justify-center gap-16"
-        >
-          <li>
-            <a href="/">Główna</a>
-          </li>
-          <li>
-            <a href="/usługi/">Usługi</a>
-          </li>
-          <li>
-            <a href="/#realizacje">Realizacje</a>
-          </li>
-          <li>
-            <a href="/contact">Kontakt</a>
-          </li>
-        </ul>
+          <ul className=" flex items-center justify-center gap-16">
+            <li>
+              <a href="/">Główna</a>
+            </li>
+            <li>
+              <a href="/usługi/">Usługi</a>
+            </li>
+            <li>
+              <a href="/realizacje">Realizacje</a>
+            </li>
+            <li>
+              <a href="/kontakt">Kontakt</a>
+            </li>
+          </ul>
         </nav>
-      )
-    }
+      )}
       {matches && toogled && (
-          <motion.nav 
-          onClick={handleCloseNav}           
-            variants={navMotion}  
-            animate="visible"
-            exit="hidden"
-            initial="hidden" className="fixed flex inset-0 h-screen w-screen flex-col items-center justify-center text-2xl bg-gradient-to-b from-[#404040] from-[64px] to-primary to-[64px] -z-10">
-        <ul 
-        className="space-y-8 text-center"
+        <motion.nav
+          variants={navMotion}
+          animate="visible"
+          exit="hidden"
+          initial="hidden"
+          className="fixed  left-1/2 top-40 z-10 flex -translate-x-1/2 flex-col items-center justify-center text-2xl"
         >
-          <motion.li variants={itemMotion}>
-            <a href="/">Główna</a>
-          </motion.li>
-          <motion.li variants={itemMotion}> 
-            <a href="/usługi/">Usługi</a>
-          </motion.li>
-          <motion.li variants={itemMotion}>
-            <a href="/#realizacje">Realizacje</a>
-          </motion.li>
-          <motion.li variants={itemMotion}>
-            <a href="/contact">Kontakt</a>
-          </motion.li>
-        </ul>
+          <ul className="space-y-8 text-center">
+            <motion.li variants={itemMotion}>
+              <a href="/">Główna</a>
+            </motion.li>
+            <motion.li variants={itemMotion}>
+              <a href="/usługi/">Usługi</a>
+            </motion.li>
+            <motion.li variants={itemMotion}>
+              <a href="/realizacje">Realizacje</a>
+            </motion.li>
+            <motion.li variants={itemMotion}>
+              <a href="/kontakt">Kontakt</a>
+            </motion.li>
+          </ul>
         </motion.nav>
       )}
-      {matches && 
+      {matches && (
         <div
           onClick={() => setToogled((prev) => !prev)}
-          className="relative w-8 space-y-1.5 cursor-pointer"
+          className="relative w-8 cursor-pointer space-y-1.5"
         >
           <motion.span
             animate={{ rotateZ: toogled ? -45 : 0, y: toogled ? 8 : 0 }}
-            className="block h-0.5 w-full bg-white rounded-full"
+            className="block h-0.5 w-full rounded-full bg-white"
           />
           <motion.span
             animate={{ width: toogled ? "0px" : "100%" }}
-            className="block h-0.5 w-full bg-white rounded-full"
+            className="block h-0.5 w-full rounded-full bg-white"
           />
           <motion.span
             animate={{
               rotateZ: toogled ? 45 : 0,
               y: toogled ? -8 : 0,
             }}
-            className="block h-0.5 w-full bg-white rounded-full"
+            className="block h-0.5 w-full rounded-full bg-white"
           />
         </div>
-        }
+      )}
+      {toogled && (
+        <div
+          onClick={handleCloseNav}
+          className="fixed left-0 top-0 -z-10 h-screen w-screen  bg-gradient-to-b from-[#404040] from-[64px] to-secondary/90 to-[64px]"
+        />
+      )}
     </>
   );
 };
