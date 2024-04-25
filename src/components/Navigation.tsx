@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { cn } from "@utils/cn";
 
 const navMotion = {
   visible: {
@@ -18,12 +19,18 @@ const itemMotion = {
   hidden: { opacity: 0, x: -100 },
 };
 
+const navItems = [
+  { id: 1, label: "Główna", path: "/" },
+  { id: 2, label: "Usługi", path: "/usługi" },
+  { id: 3, label: "Realizacje", path: "/realizacje" },
+  { id: 4, label: "Kontakt", path: "/kontakt" },
+];
 export const Navigation = () => {
   const [toogled, setToogled] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const handleCloseNav = () => {
-    setTimeout(() => setToogled(false), 300);
+    setTimeout(() => setToogled(false), 500);
   };
 
   useEffect(() => {
@@ -32,23 +39,25 @@ export const Navigation = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, [windowWidth]);
   const matches = windowWidth <= 1024;
+
   return (
     <>
       {!matches && (
         <nav>
-          <ul className=" flex items-center justify-center gap-16">
-            <li>
-              <a href="/">Główna</a>
-            </li>
-            <li>
-              <a href="/usługi/">Usługi</a>
-            </li>
-            <li>
-              <a href="/realizacje">Realizacje</a>
-            </li>
-            <li>
-              <a href="/kontakt">Kontakt</a>
-            </li>
+          <ul className="flex items-center justify-center gap-16">
+            {navItems.map(({ id, label, path }) => (
+              <li key={id}>
+                <a
+                  className={cn(
+                    location.pathname.slice(0, 3) === path.slice(0, 3) &&
+                      "border-b-2 border-white",
+                  )}
+                  href={path}
+                >
+                  {label}
+                </a>
+              </li>
+            ))}
           </ul>
         </nav>
       )}
@@ -61,18 +70,19 @@ export const Navigation = () => {
           className="fixed  left-1/2 top-40 z-10 flex -translate-x-1/2 flex-col items-center justify-center text-2xl"
         >
           <ul className="space-y-8 text-center">
-            <motion.li variants={itemMotion}>
-              <a href="/">Główna</a>
-            </motion.li>
-            <motion.li variants={itemMotion}>
-              <a href="/usługi/">Usługi</a>
-            </motion.li>
-            <motion.li variants={itemMotion}>
-              <a href="/realizacje">Realizacje</a>
-            </motion.li>
-            <motion.li variants={itemMotion}>
-              <a href="/kontakt">Kontakt</a>
-            </motion.li>
+            {navItems.map(({ id, label, path }) => (
+              <motion.li key={id} variants={itemMotion}>
+                <a
+                  href={path}
+                  className={cn(
+                    location.pathname.slice(0, 3) === path.slice(0, 3) &&
+                      "border-b-2 border-white",
+                  )}
+                >
+                  {label}
+                </a>
+              </motion.li>
+            ))}
           </ul>
         </motion.nav>
       )}
@@ -99,9 +109,12 @@ export const Navigation = () => {
         </div>
       )}
       {toogled && (
-        <div
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.7 }}
+          exit={{ opacity: 0 }}
           onClick={handleCloseNav}
-          className="fixed left-0 top-0 -z-10 h-screen w-screen  bg-gradient-to-b from-[#404040] from-[64px] to-secondary/90 to-[64px]"
+          className="fixed left-0 top-0 -z-10 h-screen w-screen bg-black"
         />
       )}
     </>
