@@ -1,0 +1,38 @@
+---
+import { cn } from '@utils/cn';
+import type { MarkdownInstance } from 'astro';
+import { Image } from 'astro:assets';
+
+type Props = {
+  data: MarkdownInstance<Record<string, any>>[];
+  imageSize: { width: number; height: number };
+  className?: string;
+};
+const { data, className, imageSize } = Astro.props;
+---
+
+<div class={cn('relative flex gap-10', className)}>
+  {
+    data.map(({ url, frontmatter }, i) => (
+      <a
+        href={url}
+        class="group relative flex flex-col items-center space-y-5 p-2  capitalize">
+        <div
+          class={cn(
+            `relative z-10  overflow-hidden rounded-2xl border-2 shadow-xl shadow-black/30 h-[${imageSize.height}px] w-full`
+          )}>
+          <Image
+            width={imageSize.width}
+            height={imageSize.height}
+            src={frontmatter.image.url}
+            alt={frontmatter.image.alt}
+            class="z-10 h-full w-full object-cover duration-300 group-hover:scale-105"
+          />
+          <h3 class="absolute -left-1 bottom-5 z-50 rounded-r-lg border-2 bg-black/60 px-5  py-1 text-2xl font-bold">
+            {frontmatter.title}
+          </h3>
+        </div>
+      </a>
+    ))
+  }
+</div>

@@ -1,22 +1,23 @@
 ---
 // components
-import { DisplayServices } from "@components/DisplayServices";
-import H1 from "@components/ui/H1.astro";
-import ContentLayout from "@layouts/ContentLayout.astro";
-import MainLayout from "@layouts/MainLayout.astro";
+import DisplayServices from '@components/DisplayServices.astro';
+import H1 from '@components/ui/H1.astro';
+import ContentLayout from '@layouts/ContentLayout.astro';
+import MainLayout from '@layouts/MainLayout.astro';
 
-const services = await Astro.glob("src/pages/usługi/*.md");
+const services = await Astro.glob('src/pages/usługi/*.md');
 ---
 
-<MainLayout title="Swoje Ściany - Usługi" description="Nasze usługi">
+<MainLayout
+  title="Usługi - Swoje Ściany"
+  description="Poznaj naszą szeroką ofertę usług remontowych w Warszawie. Oferujemy kompleksowe usługi dekoracyjne, elektryczne, glazurnicze, hydrauliczne, podłogowe, tynkarskie i wykończeniowe. Zaufaj naszym doświadczonym fachowcom i skontaktuj się z nami już dziś!">
   <section class="bg-[gray] py-14">
     <ContentLayout>
       <H1 className="pb-20">Nasze usługi</H1>
-
       <DisplayServices
         data={services}
-        className="flex flex-wrap items-center justify-center gap-2 gap-y-10"
-        client:load
+        className="grid grid-cols-1 gap-2 gap-y-10 sm:grid-cols-2 lg:grid-cols-3"
+        imageSize={{ width: 300, height: 230 }}
       />
     </ContentLayout>
   </section>

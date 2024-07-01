@@ -2,7 +2,7 @@
 title: "hydrauliczne"
 layout: "src/layouts/ServicesLayout.astro"
 image: { url: "/images/hydrauliczne.jpg", alt: "obraz naprawy rur" }
-description: "Opis usługi Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, nobis."
+description: "Rzetelne usługi hydrauliczne w Warszawie. Zajmujemy się instalacją, naprawą i konserwacją systemów wodno-kanalizacyjnych w domach, mieszkaniach i obiektach komercyjnych."
 ---
 
 ### • Obmurowanie wanny prostej

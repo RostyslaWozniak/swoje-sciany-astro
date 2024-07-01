@@ -1,32 +1,30 @@
 ---
 // components
-import H1 from "@components/ui/H1.astro";
-import H2 from "@components/ui/H2.astro";
-import MainLayout from "@layouts/MainLayout.astro";
-import ContentLayout from "./ContentLayout.astro";
-import ServicesCard from "@components/ui/ServicesCard.astro";
+import H1 from '@components/ui/H1.astro';
+import H2 from '@components/ui/H2.astro';
+import MainLayout from '@layouts/MainLayout.astro';
+import ContentLayout from './ContentLayout.astro';
+import ServicesCard from '@components/ui/ServicesCard.astro';
+import DisplayServices from '@components/DisplayServices.astro';
 
 const { frontmatter } = Astro.props;
 const { title, description, image } = frontmatter;
-const services = await Astro.glob("src/pages/usługi/*.md");
+const services = await Astro.glob('src/pages/usługi/*.md');
 const anotherServices = services.filter(
-  (service) => service.frontmatter.title !== title,
+  (service) => service.frontmatter.title !== title
 );
 ---
 
 <MainLayout
   className="bg-secondary py-20"
   title={`Usługi ${title}`}
-  {description}
->
+  {description}>
   <ContentLayout className="w-full space-y-20 ">
     <H1>Usługi {(<span class="text-orange-300">{title}</span>)}</H1>
     <div
-      class="flex w-full flex-col items-center justify-between gap-10 lg:flex-row lg:items-start"
-    >
+      class="flex w-full flex-col items-center justify-between gap-10 lg:flex-row lg:items-start">
       <div
-        class="prose prose-sm space-y-1 text-white [text-shadow:_0px_0px_0_rgb(5_5_5_)] sm:prose-base prose-h3:text-white prose-strong:text-orange-300 prose-strong:[text-shadow:_1px_1px_0_rgb(5_5_5_)]"
-      >
+        class="space-y-1 text-white [text-shadow:_0px_0px_0_rgb(5_5_5_)] sm:prose-base prose-h3:text-white prose-strong:text-orange-300 prose-strong:[text-shadow:_1px_1px_0_rgb(5_5_5_)]">
         <slot />
       </div>
       <div class="flex flex-col items-center space-y-12">
@@ -36,13 +34,12 @@ const anotherServices = services.filter(
           class="hidden h-[300px] w-[500px] rounded-2xl border-2 object-cover sm:block"
         />
         <H2>Sprawdź inne nasze usługi</H2>
-        <div class="grid grid-cols-2 gap-10">
-          {
-            anotherServices.map((service) => (
-              <ServicesCard className="w-[150px] h-[150px]" {...service} />
-            ))
-          }
-        </div>
+
+        <DisplayServices
+          data={anotherServices}
+          className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:px-5"
+          imageSize={{ width: 150, height: 150 }}
+        />
       </div>
     </div>
   </ContentLayout>

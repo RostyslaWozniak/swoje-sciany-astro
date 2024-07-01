@@ -1,6 +1,6 @@
 ---
-import { ViewTransitions } from "astro:transitions";
-import Seo from "@components/Seo.astro";
+import { ViewTransitions } from 'astro:transitions';
+import Seo from '@components/Seo.astro';
 
 const { title, description } = Astro.props;
 ---
@@ -8,11 +8,11 @@ const { title, description } = Astro.props;
 <head>
   <meta charset="utf-8" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <meta content={description} name="description" />
-  <meta content={title} name="title" />
-  <meta name="viewport" content="width=device-width" />
+  <meta name="description" content={description} />
+  <meta name="title" content={title} />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
-    content="remont mieszkań, remont budynków, usługi remontowe, renowacja wnętrz, remonty Warszawa, remont Warszawa"
+    content="swoje sciany, swojesciany, remonty, mieszkania, domy, obiekty komercyjne, remont mieszkań, remont budynków, usługi remontowe, renowacja wnętrz, remonty Warszawa, remont Warszawa, remonty w okolicy, Warszawa i okolice, remonty wnętrz Warszawa, terminowe remonty Warszawa, remonty z gwarancją Warszawa, konkurencyjne ceny remontów Warszawa, fachowcy remontowi Warszawa, profesjonalne remonty Warszawa, kompleksowe remonty Warszawa"
     name="keywords"
   />
   <meta name="generator" content={Astro.generator} />

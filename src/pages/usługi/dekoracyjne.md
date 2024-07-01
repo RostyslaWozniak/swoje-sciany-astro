@@ -2,7 +2,7 @@
 title: "dekoracyjne"
 layout: "src/layouts/ServicesLayout.astro"
 image: { url: "/images/dekoracyjne.jpg", alt: "obraz dekoracyjnej usługi" }
-description: "Opis usługi Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, nobis."
+description: "Profesjonalne usługi dekoracyjne w Warszawie. Oferujemy kompleksowe dekoracje wnętrz, które nadadzą Twojemu mieszkaniu lub biuru wyjątkowy charakter. Skontaktuj się z nami, aby uzyskać więcej informacji."
 ---
 
 ### • Malowanie wnętrz farbą emulsyjną (dwukrotne) – w jednym kolorze

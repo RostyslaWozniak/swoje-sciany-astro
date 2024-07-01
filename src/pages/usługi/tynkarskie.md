@@ -2,7 +2,7 @@
 title: "tynkarskie"
 layout: "src/layouts/ServicesLayout.astro"
 image: { url: "/images/tynkarskie.jpg", alt: "obraz tynkowania" }
-description: "Opis usługi Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, nobis."
+description: "Profesjonalne usługi tynkarskie w Warszawie. Oferujemy tynkowanie ścian i sufitów, zarówno tradycyjne, jak i maszynowe. Skontaktuj się z nami, aby uzyskać idealnie gładkie powierzchnie."
 ---
 
 ### • Tynkowanie metodą tradycyjną ścian i sufitów

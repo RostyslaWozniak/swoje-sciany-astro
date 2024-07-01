@@ -3,7 +3,7 @@ title: "wykończeniowe"
 layout: "src/layouts/ServicesLayout.astro"
 image:
   { url: "/images/wykończeniowe.jpg", alt: "obraz wykonczonego mieszkania" }
-description: "Opis usługi Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, nobis."
+description: "Kompleksowe usługi wykończeniowe w Warszawie. Specjalizujemy się w wykończeniach wnętrz mieszkań, domów i obiektów komercyjnych. Profesjonalizm, precyzja i terminowość."
 ---
 
 ### • Montaż sufitów podwieszanych na stelażu

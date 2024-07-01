@@ -2,7 +2,7 @@
 title: "podłogowe"
 layout: "src/layouts/ServicesLayout.astro"
 image: { url: "/images/podłogowe.jpg", alt: "obraz układania podłogi" }
-description: "Opis usługi Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, nobis."
+description: "Kompleksowe usługi podłogowe w Warszawie. Montaż i renowacja podłóg drewnianych, paneli, parkietów oraz wykładzin. Gwarantujemy wysoką jakość wykonania i trwałość."
 ---
 
 ### • Układanie paneli podłogowych (bez kleju)

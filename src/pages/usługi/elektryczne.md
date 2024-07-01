@@ -2,7 +2,7 @@
 title: "elektryczne"
 layout: "src/layouts/ServicesLayout.astro"
 image: { url: "/images/elektryczne.jpg", alt: "obraz elektrycznej naprawy" }
-description: "Opis usługi Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, nobis."
+description: "Solidne i bezpieczne usługi elektryczne w Warszawie. Nasz zespół certyfikowanych elektryków zapewnia montaż, naprawy i modernizacje instalacji elektrycznych w domach i obiektach komercyjnych."
 ---
 
 ### • Wykonanie instalacji – punktu: elektrycznego, telefonicznego, antenowego itp.

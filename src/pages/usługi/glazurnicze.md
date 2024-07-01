@@ -2,7 +2,7 @@
 title: "glazurnicze"
 layout: "src/layouts/ServicesLayout.astro"
 image: { url: "/images/glazurnicze.jpg", alt: "obraz układania glazur" }
-description: "Opis usługi Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, nobis."
+description: "Profesjonalne usługi glazurnicze w Warszawie. Oferujemy układanie płytek, glazury, terakoty oraz kompleksowe remonty łazienek i kuchni. Skontaktuj się z nami, aby zrealizować Twój projekt."
 ---
 
 ### • Usuwanie starej glazury i terakoty (z wyniesieniem do kontenera z windą)
