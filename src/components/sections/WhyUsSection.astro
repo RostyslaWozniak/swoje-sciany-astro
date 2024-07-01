@@ -1,37 +1,36 @@
 ---
-import ContentLayout from "@layouts/ContentLayout.astro";
-import image1 from "@assets/images/why-us-section/professionalism.jpg";
-import image2 from "@assets/images/why-us-section/time.jpg";
-import image3 from "@assets/images/why-us-section/quality.jpg";
-import { Image } from "astro:assets";
-import H3 from "@components/ui/H3.astro";
-import Text from "@components/ui/Text.astro";
-import H2 from "@components/ui/H2.astro";
+import ContentLayout from '@layouts/ContentLayout.astro';
+import image1 from '@assets/images/why-us-section/professionalism.jpg';
+import image2 from '@assets/images/why-us-section/time.jpg';
+import image3 from '@assets/images/why-us-section/quality.jpg';
+import { Image } from 'astro:assets';
+import H3 from '@components/ui/H3.astro';
+import H2 from '@components/ui/H2.astro';
 
 const whyUsData = [
   {
     image: {
       url: image1,
-      alt: "zdjęcie profilaktycznego remontu",
+      alt: 'zdjęcie profilaktycznego remontu',
     },
-    title: "Profesjonalizm",
-    text: "Nasz zespół składa się z doświadczonych specjalistów, którzy podejmują się każdego zadania z pełnym zaangażowaniem. Jesteśmy przekonani, że profesjonalizm to klucz do sukcesu, dlatego każdy remont realizujemy z najwyższą starannością. ",
+    title: 'Profesjonalizm',
+    text: 'Nasz zespół składa się z doświadczonych specjalistów, którzy podejmują się każdego zadania z pełnym zaangażowaniem. Jesteśmy przekonani, że profesjonalizm to klucz do sukcesu, dlatego każdy remont realizujemy z najwyższą starannością. ',
   },
   {
     image: {
       url: image2,
-      alt: "zdjęcie terminowości",
+      alt: 'zdjęcie terminowości',
     },
-    title: "Terminowość",
-    text: "Szanujemy Twój czas i dlatego dokładamy wszelkich starań, aby prace były wykonane zgodnie z ustalonym harmonogramem. Dzięki temu możesz cieszyć się odnowionym wnętrzem bez zbędnych opóźnień.",
+    title: 'Terminowość',
+    text: 'Szanujemy Twój czas i dlatego dokładamy wszelkich starań, aby prace były wykonane zgodnie z ustalonym harmonogramem. Dzięki temu możesz cieszyć się odnowionym wnętrzem bez zbędnych opóźnień.',
   },
   {
     image: {
       url: image3,
-      alt: "zdjęcie jakościowego remontu",
+      alt: 'zdjęcie jakościowego remontu',
     },
-    title: "Jakość",
-    text: "Stawiamy na jakość materiałów i precyzję wykonania. Dzięki temu nasze prace są trwałe, estetyczne i spełniają oczekiwania nawet najbardziej wymagających klientów.",
+    title: 'Jakość',
+    text: 'Stawiamy na jakość materiałów i precyzję wykonania. Dzięki temu nasze prace są trwałe, estetyczne i spełniają oczekiwania nawet najbardziej wymagających klientów.',
   },
 ];
 ---
@@ -43,8 +42,7 @@ const whyUsData = [
       whyUsData.map(({ image, title, text }, i) => (
         <div
           class="  shadow-xl md:flex"
-          style={{ flexDirection: i === 1 ? "row-reverse" : "row" }}
-        >
+          style={{ flexDirection: i === 1 ? 'row-reverse' : 'row' }}>
           <Image
             class=" w-[100%] object-cover sm:h-[300px] md:w-[50%] lg:h-[350px]"
             src={image.url}

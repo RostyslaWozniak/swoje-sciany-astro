@@ -65,7 +65,7 @@ const contactDescriptionArr = [
       <div
         class="relative z-20 flex h-full translate-y-10 flex-col content-center items-center justify-center gap-7 sm:translate-y-0">
         {
-          contactDescriptionArr.map(({ name, value, icon, action }, index) => (
+          contactDescriptionArr.map(({ name, value, icon, action }) => (
             <a
               href={action ? `${action}: ${value}` : value}
               target={action ? '_self' : '_blank'}

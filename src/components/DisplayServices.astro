@@ -13,7 +13,7 @@ const { data, className, imageSize } = Astro.props;
 
 <div class={cn('relative flex gap-10', className)}>
   {
-    data.map(({ url, frontmatter }, i) => (
+    data.map(({ url, frontmatter }) => (
       <a
         href={url}
         class="group relative flex flex-col items-center space-y-5 p-2  capitalize">
