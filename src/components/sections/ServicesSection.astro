@@ -11,7 +11,7 @@ const services = await Astro.glob('src/pages/usługi/*.md');
     <H2>Nasze usługi</H2>
     <DisplayServices
       data={services.slice(0, 3)}
-      className="grid grid-cols-1 gap-2 gap-y-10 sm:grid-cols-2 lg:grid-cols-3"
+      className="grid grid-cols-1 gap-y-10 sm:grid-cols-2 lg:grid-cols-3"
       imageSize={{ width: 200, height: 230 }}
     />
     <a

@@ -11,7 +11,7 @@ type Props = {
 const { data, className, imageSize } = Astro.props;
 ---
 
-<div class={cn('relative flex gap-10', className)}>
+<div class={cn('relative gap-10', className)}>
   {
     data.map(({ url, frontmatter }) => (
       <a
@@ -19,7 +19,7 @@ const { data, className, imageSize } = Astro.props;
         class="group relative flex flex-col items-center space-y-5 p-2  capitalize">
         <div
           class={cn(
-            `relative z-10  overflow-hidden rounded-2xl border-2 shadow-xl shadow-black/30 h-[${imageSize.height}px] w-full`
+            `relative z-10  aspect-video w-full overflow-hidden rounded-2xl border-2 shadow-xl  shadow-black/30`
           )}>
           <Image
             width={imageSize.width}
