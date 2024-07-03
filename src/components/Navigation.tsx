@@ -30,7 +30,7 @@ export const Navigation = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const handleCloseNav = () => {
-    setTimeout(() => setToogled(false), 500);
+    setToogled(false);
   };
 
   useEffect(() => {
