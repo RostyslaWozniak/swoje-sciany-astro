@@ -1,16 +1,22 @@
 ---
-import HomeSection from '@components/sections/HomeSection.astro';
-import HowToStartSection from '@components/sections/HowToStartSection.astro';
-import ServicesSection from '@components/sections/ServicesSection.astro';
-import WhyUsSection from '@components/sections/WhyUsSection.astro';
-import ContactSection from '@components/sections/ContactSection.astro';
-import MainLayout from '@layouts/MainLayout.astro';
-import LogoAnimation from '@components/LogoAnimation/LogoAnimation';
+import HomeSection from "@components/sections/HomeSection.astro";
+import HowToStartSection from "@components/sections/HowToStartSection.astro";
+import ServicesSection from "@components/sections/ServicesSection.astro";
+import WhyUsSection from "@components/sections/WhyUsSection.astro";
+import ContactSection from "@components/sections/ContactSection.astro";
+import MainLayout from "@layouts/MainLayout.astro";
+import LogoAnimation from "@components/LogoAnimation/LogoAnimation";
+
+Astro.response.headers.set(
+  "Cache-Control",
+  "public, max-age=0, s-maxage=3600, stale-while-revalidate=5400"
+);
 ---
 
 <MainLayout
   title="Swoje Ściany"
-  description="Profesjonalne remonty mieszkań, domów i obiektów komercyjnych.">
+  description="Profesjonalne remonty mieszkań, domów i obiektów komercyjnych."
+>
   <LogoAnimation client:load />
   <HomeSection />
   <ServicesSection />
