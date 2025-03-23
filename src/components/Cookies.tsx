@@ -10,7 +10,7 @@ export const Cookies = () => {
     setIsVisible(false);
   };
   useEffect(() => {
-    setIsVisible(true)
+    setIsVisible(true);
     const cDecoded = decodeURIComponent(document.cookie);
     const cArray = cDecoded.split("; ");
     cArray.forEach((el) => {
@@ -21,12 +21,12 @@ export const Cookies = () => {
   }, []);
   return (
     <div
-      className="fixed bottom-0 z-[99] h-[200px] w-full flex-col items-center justify-center backdrop-blur-lg backdrop-brightness-50 lg:px-40"
+      className="fixed bottom-0 z-[99] min-h-[200px] w-full flex-col items-center justify-center bg-secondary/80 px-2.5 py-8 text-white backdrop-blur-lg lg:px-40"
       style={{
         display: isVisible ? "flex" : "none",
       }}
     >
-      <p className="text-center lg:text-xl">
+      <p className="text-center text-lg lg:text-xl">
         Nasza strona internetowa może wykorzystywać pliki cookies w celu poprawy
         jakości naszych usług i dostosowania naszej strony do Twoich potrzeb.
         Możesz zmienić ustawienia plików cookies w swojej przeglądarce
@@ -34,11 +34,10 @@ export const Cookies = () => {
       </p>
       <button
         onClick={() => setCookie("cookie", true, 30)}
-        className="my-5 h-[30px] w-[150px] rounded-lg border-2 bg-accent "
+        className="bg-accent my-5 w-full rounded-full border-2 px-8  py-2 text-lg sm:w-auto "
       >
-        Ok
+        Rozumiem
       </button>
     </div>
   );
 };
-
