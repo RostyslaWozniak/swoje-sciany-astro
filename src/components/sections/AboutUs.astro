@@ -1,0 +1,40 @@
+---
+import H2 from "@components/ui/H2.astro";
+import Text from "@components/ui/Text.astro";
+import ContentLayout from "@layouts/ContentLayout.astro";
+import { Image } from "astro:assets";
+---
+
+<section class="">
+  <ContentLayout
+    className="flex w-full flex-col justify-between gap-x-12 px-0 py-0  md:items-center lg:flex-row"
+  >
+    <div
+      class="mx-auto flex max-w-[600px] flex-col justify-between gap-2 px-2 pb-12 pt-4 md:gap-5 md:py-10 lg:max-w-full"
+    >
+      <H2 className="!text-start"
+        >O Nas – Profesjonaliści w Branży Remontowej</H2
+      >
+      <Text className="break-words text-start text-xl font-medium lg:text-2xl">
+        Zespół wykwalifikowanych fachowców z wieloletnim doświadczeniem w branży
+        remontowej.
+      </Text>
+      <Text className=" text-start font-medium md:text-lg">
+        Jesteśmy firmą remontową z wieloletnim doświadczeniem, która przez lata
+        działalności zrealizowała setki projektów. Nasz zespół składa się z
+        wysoko wykwalifikowanych fachowców, którzy każdego dnia dbają o to, by
+        remonty były wykonywane zgodnie z najwyższymi standardami jakości.
+        Transparentność i komunikacja z klientem to dla nas priorytet, dlatego
+        na każdym etapie remontu jesteśmy w stałym kontakcie, informując o
+        postępach prac.
+      </Text>
+    </div>
+    <Image
+      src="/images/about-us.jpg"
+      alt="zdjęcie mieszkania, tło"
+      width={500}
+      height={700}
+      class="mx-auto aspect-square object-cover shadow-md sm:aspect-video md:rounded-[24px] lg:aspect-square"
+    />
+  </ContentLayout>
+</section>

@@ -4,54 +4,55 @@ import H2 from "@components/ui/H2.astro";
 import H3 from "@components/ui/H3.astro";
 import Text from "@components/ui/Text.astro";
 import ContentLayout from "@layouts/ContentLayout.astro";
-// assets
-import { Image } from "astro:assets";
-import icon1 from "/src/assets/images/icons/svg/hov-to-start-icons/1.svg";
-import icon2 from "/src/assets/images/icons/svg/hov-to-start-icons/2.svg";
-import icon3 from "/src/assets/images/icons/svg/hov-to-start-icons/3.svg";
-import icon4 from "/src/assets/images/icons/svg/hov-to-start-icons/4.svg";
+import { Headset, NotepadText, UserCog, Truck } from "lucide-react";
 
 const howToStartData = [
   {
     id: 1,
     title: "Konsultacja",
-    text: "Zadzwoń i skorzystaj z bezpłatnej konsultacji.",
-    icon: icon1,
+    text: "Skontaktuj się z nami i skorzystaj z bezpłatnej porady.",
+    icon: Headset,
   },
   {
     id: 2,
     title: "Wycena",
-    text: "Kosztorysant przyjedzie na miejsce i sporządzi wycenę.",
-    icon: icon2,
+    text: "Nasz kosztorysant odwiedzi Cię i przygotuje szczegółową wycenę.",
+    icon: NotepadText,
   },
   {
     id: 3,
     title: "Koordynacja",
-    text: "Omówienie etapów pracy i zawarcie umowy.",
-    icon: icon3,
+    text: "Ustalamy harmonogram prac i podpisujemy umowę.",
+    icon: UserCog,
   },
   {
     id: 4,
     title: "Start",
-    text: "Dostawa materiałów. Remont mieszkania krok po kroku.",
-    icon: icon4,
+    text: "Dostarczamy materiały i realizujemy remont krok po kroku.",
+    icon: Truck,
   },
 ];
 ---
 
-<section class="w-full bg-secondary">
-  <ContentLayout className="flex flex-col items-center gap-16">
-    <H2> Od Czego Zacząc Remont Mieszkania Pod Klucz? </H2>
-    <div class="flex flex-wrap items-center justify-center gap-10">
+<section class="w-full bg-card">
+  <ContentLayout className="flex flex-col items-center gap-y-8 sm:gap-y-16">
+    <div class="flex flex-col items-center space-y-4">
+      <H2>Od czego zacząć remont pod klucz?</H2>
+      <Text className="max-w-4xl text-start text-xl sm:text-center"
+        >Sprawnie i bez stresu – tak wygląda remont pod klucz. Od pierwszej
+        konsultacji aż po gotowe mieszkanie, dbamy o każdy etap prac.</Text
+      >
+    </div>
+    <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
       {
-        howToStartData.map(({ id, title, text, icon }) => (
-          <div class="flex items-center justify-center gap-4 sm:gap-7 lg:w-[250px] lg:flex-col">
-            <Image src={icon} alt={`ikonka ${title}`} class="w-16 sm:w-20" />
-            <div class="w-1/2 lg:w-full">
-              <H3>
+        howToStartData.map(({ id, title, text, icon: Icon }) => (
+          <div class="flex max-w-sm flex-col items-center space-y-2">
+            <Icon className="h-20 w-20 stroke-[1.5px] text-card-foreground" />
+            <div class="space-y-1">
+              <H3 className=" font-semibold">
                 {id}. {title}
               </H3>
-              <Text>{text}</Text>
+              <Text className="text-lg">{text}</Text>
             </div>
           </div>
         ))

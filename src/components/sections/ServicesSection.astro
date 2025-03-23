@@ -1,14 +1,21 @@
 ---
 // components
-import DisplayServices from '@components/DisplayServices.astro';
-import H2 from '@components/ui/H2.astro';
-import ContentLayout from '@layouts/ContentLayout.astro';
-const services = await Astro.glob('src/pages/usługi/*.md');
+import DisplayServices from "@components/DisplayServices.astro";
+import H2 from "@components/ui/H2.astro";
+import Text from "@components/ui/Text.astro";
+import ContentLayout from "@layouts/ContentLayout.astro";
+const services = await Astro.glob("src/pages/usługi/*.md");
 ---
 
-<section class="bg-primary">
-  <ContentLayout className="flex flex-col items-center gap-14 py-10">
-    <H2>Nasze usługi</H2>
+<section class="">
+  <ContentLayout className="flex flex-col items-center gap-12 py-10">
+    <div class="flex flex-col items-center space-y-4">
+      <H2>Nasze Usługi Remontowe – Pełna Oferta Remontów Mieszkań i Domów</H2>
+      <Text className="max-w-4xl text-start text-xl sm:text-center"
+        >Specjalizujemy się w remontach mieszkań, domów oraz lokali
+        komercyjnych. Zapewniamy pełną obsługę od projektu po wykonanie.</Text
+      >
+    </div>
     <DisplayServices
       data={services.slice(0, 3)}
       className="grid grid-cols-1 gap-y-10 sm:grid-cols-2 lg:grid-cols-3"
@@ -16,8 +23,8 @@ const services = await Astro.glob('src/pages/usługi/*.md');
     />
     <a
       href="/usługi/"
-      class="rounded-full border-2 bg-accent/70 px-10 py-2 text-center shadow-castom duration-300 hover:bg-accent/50"
-      >Zobacz więcej usług</a
-    >
+      class="-mt-4 w-full rounded-full bg-secondary px-10 pb-2.5 pt-2 text-center text-2xl text-background shadow-md duration-300 hover:bg-secondary/80 sm:w-auto"
+      >Zobacz więcej usług
+    </a>
   </ContentLayout>
 </section>

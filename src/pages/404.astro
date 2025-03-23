@@ -1,28 +1,24 @@
 ---
-// lib import
-import { Image } from 'astro:assets';
-// assets
-import bgImage from '@assets/images/background/contact-bg.jpg';
 // component imports
-import MainLayout from '@layouts/MainLayout.astro';
-import H1 from '@components/ui/H1.astro';
-import Text from '@components/ui/Text.astro';
-import ContentLayout from '@layouts/ContentLayout.astro';
+import MainLayout from "@layouts/MainLayout.astro";
+import H1 from "@components/ui/H1.astro";
+import Text from "@components/ui/Text.astro";
+import ContentLayout from "@layouts/ContentLayout.astro";
 ---
 
 <MainLayout
   className="flex items-center justify-center"
   title="Strona nie znaleziona"
-  description="Strona nie znaleziona">
-  <Image
-    src={bgImage}
-    alt="tło"
-    class="absolute left-0 top-0 -z-10 h-full w-screen object-cover shadow-[0_10px_80px_40px_rgba(0,0,0,0.3)] brightness-75 sm:blur-sm"
-  />
-  <ContentLayout className="relative flex flex-col items-center gap-10">
-    <H1 className="">No cóż, to niezręczne!</H1>
-    <Text>Wygląda na to, że coś przeoczyliśmy…</Text>
-    <a href="/" class="rounded-full border-2 bg-accent px-10 py-2 text-center"
+  description="Strona nie znaleziona"
+>
+  <ContentLayout
+    className="flex min-h-[500px] flex-col items-center justify-center gap-10"
+  >
+    <H1 className="">404 Strona nie znaleziona</H1>
+    <Text>Strona ktorą szukasz nie została znaleziona lub nie istnieje.</Text>
+    <a
+      href="/"
+      class="w-full rounded-full border-2 bg-primary px-10 py-2 text-center text-2xl text-secondary-foreground sm:w-auto"
       >Na Główną</a
     >
   </ContentLayout>

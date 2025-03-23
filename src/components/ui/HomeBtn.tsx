@@ -8,11 +8,11 @@ export const HomeBtn = () => {
   return (
     <button
       onClick={() => setIsNumberVisible(true)}
-      className="relative flex h-14 w-[min(400px,100%)] flex-col items-center  overflow-hidden rounded-full border-2 bg-accent/70 text-2xl font-bold shadow-castom duration-300 [text-shadow:_1px_1px_0_rgb(5_5_5_)] hover:bg-accent/50 md:text-3xl"
+      className="text-primary-foreground relative flex h-14 w-[min(400px,100%)] flex-col  items-center overflow-hidden rounded-full bg-primary  text-2xl font-bold  shadow-lg duration-300  md:text-3xl"
     >
       <div
         className={cn("absolute top-0 h-20   leading-[50px]", {
-          "-top-14": isNumberVisible,
+          "-top-16": isNumberVisible,
         })}
       >
         Skontaktuj się z nami
@@ -21,7 +21,7 @@ export const HomeBtn = () => {
         href={`tel:${phoneNumber}`}
         className={cn(
           "absolute -bottom-14 w-full leading-[50px] transition-all",
-          { "bottom-0": isNumberVisible },
+          { "bottom-1": isNumberVisible },
         )}
       >
         {phoneNumber}

@@ -8,7 +8,7 @@ const Logo = () => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <rect width="120" height="80" rx="10" fill="#E3E2E2" />
+      <rect width="120" height="80" rx="10" fill="white" />
       <path
         id="left-vertical-stroke"
         d="M14.8469 67.3845V26.1494"

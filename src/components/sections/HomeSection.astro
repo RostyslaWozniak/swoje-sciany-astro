@@ -1,34 +1,50 @@
 ---
 // lib
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 // components
-import { HomeBtn } from '@components/ui/HomeBtn';
-import H1 from '@components/ui/H1.astro';
-import Text from '@components/ui/Text.astro';
-import ContentLayout from '@layouts/ContentLayout.astro';
+import { HomeBtn } from "@components/ui/HomeBtn";
+import H1 from "@components/ui/H1.astro";
+import Text from "@components/ui/Text.astro";
+import ContentLayout from "@layouts/ContentLayout.astro";
 // assets
-import bgImage from '/src/assets/images/background/home-bg.jpg';
+import bgImage from "/src/assets/images/background/home-bg.jpg";
+import { CheckCircle } from "lucide-react";
 ---
 
-<section class="flex items-end bg-secondary sm:min-h-screen">
-  <ContentLayout className="flex w-full flex-col px-0 pb-0 pt-16">
+<section class="">
+  <ContentLayout
+    className="flex w-full flex-col justify-between gap-x-12 px-0 pb-0  md:items-center lg:flex-row"
+  >
     <Image
-      src={bgImage}
+      src="/images/hero.jpg"
       alt="zdjęcie mieszkania, tło"
-      class="left-0 right-0 w-full object-cover shadow-[0_10px_80px_40px_rgba(0,0,0,0.4)] sm:absolute sm:top-0 sm:h-full"
+      width={600}
+      height={700}
+      class="mx-auto aspect-square object-cover shadow-md sm:aspect-video md:rounded-[24px] lg:aspect-square"
     />
     <div
-      class="flex h-[min(600px,100%)] max-w-[700px] flex-col items-start justify-between gap-5 self-end px-2 py-10 sm:rounded-[25px] sm:border-2 sm:px-10 sm:backdrop-blur sm:backdrop-brightness-50">
-      <H1 className="text-start">Profesjonalny remont dla twojego domu.</H1>
-      <Text className="break-words text-start font-medium md:text-xl">
-        Firma z wieloletnim doświadczeniem oferuje kompleksowe usługi z zakresu
-        remontów. Specjalizujemy się w remontach mieszkań, domów oraz obiektów
-        komercyjnych. Nasza solidność, doświadczenie i zespół wysoko
-        wykwalifikowanych fachowców sprawiają, że realizujemy projekty z
-        najwyższą starannością i terminowością. Zadowolenie klienta to nasz
-        priorytet, dlatego stawiamy na transparentność, profesjonalizm i
-        konkurencyjne ceny.
+      class="mx-auto flex max-w-[600px] flex-col justify-between gap-2 px-2 pb-12 pt-4 md:gap-5 md:py-10 lg:max-w-full"
+    >
+      <H1 className="text-start">Profesjonalne Remonty Mieszkań i Domów</H1>
+      <Text
+        className="hidden break-words text-start font-medium md:text-xl lg:block"
+      >
+        Oferujemy kompleksowe usługi remontowe, w tym remonty mieszkań, domów
+        oraz obiektów komercyjnych. Dzięki doświadczeniu, profesjonalizmowi i
+        konkurencyjnym cenom jesteśmy najlepszym wyborem na rynku.
       </Text>
+
+      <div class="mb-2 flex flex-col gap-2 lg:mb-8">
+        <p class="flex items-center gap-2 text-xl font-semibold">
+          <CheckCircle className="stroke-3 text-emerald-500" /> Gwarancja jakości
+        </p>
+        <p class="flex items-center gap-2 text-xl font-semibold">
+          <CheckCircle className="stroke-3 text-emerald-500" /> Terminowość
+        </p>
+        <p class="flex items-center gap-2 text-xl font-semibold">
+          <CheckCircle className="stroke-3 text-emerald-500" /> Transparentna wycena
+        </p>
+      </div>
       <HomeBtn client:load />
     </div>
   </ContentLayout>

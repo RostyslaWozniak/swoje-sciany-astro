@@ -1,24 +1,31 @@
 ---
 // components
-import DisplayServices from '@components/DisplayServices.astro';
-import H1 from '@components/ui/H1.astro';
-import ContentLayout from '@layouts/ContentLayout.astro';
-import MainLayout from '@layouts/MainLayout.astro';
+import DisplayServices from "@components/DisplayServices.astro";
+import H1 from "@components/ui/H1.astro";
+import ContentLayout from "@layouts/ContentLayout.astro";
+import MainLayout from "@layouts/MainLayout.astro";
+import ServicesHeroSection from "./_components/ServicesHeroSection.astro";
+import H2 from "@components/ui/H2.astro";
+import AboutUs from "@components/sections/AboutUs.astro";
 
-const services = await Astro.glob('src/pages/usługi/*.md');
+const services = await Astro.glob("src/pages/usługi/*.md");
 ---
 
 <MainLayout
   title="Usługi - Swoje Ściany"
-  description="Poznaj naszą szeroką ofertę usług remontowych w Warszawie. Oferujemy kompleksowe usługi dekoracyjne, elektryczne, glazurnicze, hydrauliczne, podłogowe, tynkarskie i wykończeniowe. Zaufaj naszym doświadczonym fachowcom i skontaktuj się z nami już dziś!">
-  <section class="bg-[gray] py-14">
-    <ContentLayout>
-      <H1 className="pb-20">Nasze usługi</H1>
+  description="Poznaj naszą szeroką ofertę usług remontowych w Warszawie. Oferujemy kompleksowe usługi dekoracyjne, elektryczne, glazurnicze, hydrauliczne, podłogowe, tynkarskie i wykończeniowe. Zaufaj naszym doświadczonym fachowcom i skontaktuj się z nami już dziś!"
+>
+  <ContentLayout className="!px-0">
+    <ServicesHeroSection />
+    <section class="my-12 space-y-12 px-2.5">
+      <H2>Nasze Usługi Remontowe</H2>
       <DisplayServices
         data={services}
-        className="grid grid-cols-1 gap-2 gap-y-10 sm:grid-cols-2 lg:grid-cols-3"
+        className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3"
         imageSize={{ width: 300, height: 230 }}
       />
-    </ContentLayout>
-  </section>
+    </section>
+
+    <AboutUs />
+  </ContentLayout>
 </MainLayout>

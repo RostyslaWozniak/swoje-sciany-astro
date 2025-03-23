@@ -75,7 +75,7 @@ export const LayoutGrid = ({ images }: { images: Image[] }) => {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [selectedId]);
   return (
-    <div className="relative mx-auto grid  h-[900px] w-full max-w-7xl grid-cols-1 py-20 md:grid-cols-6 ">
+    <div className="relative mx-auto grid  h-[900px] w-full max-w-7xl grid-cols-1 overflow-hidden py-12 md:grid-cols-6 ">
       {/* LEFT ARROW */}
       {selectedId && <LeftChevron onClick={handlePrevImage} />}
       {/* IMAGES */}

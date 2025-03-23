@@ -1,17 +1,86 @@
 ---
-import { ImageGallery } from '@components/ImageGallery';
-import H1 from '@components/ui/H1.astro';
-import ContentLayout from '@layouts/ContentLayout.astro';
-import MainLayout from '@layouts/MainLayout.astro';
+import { ImageGallery } from "@components/ImageGallery";
+import H1 from "@components/ui/H1.astro";
+import H2 from "@components/ui/H2.astro";
+import Text from "@components/ui/Text.astro";
+import ContentLayout from "@layouts/ContentLayout.astro";
+import MainLayout from "@layouts/MainLayout.astro";
+import { Image } from "astro:assets";
+import { CheckCircle } from "lucide-react";
 ---
 
 <MainLayout
   title="Realizacje - Swoje Ściany"
-  description="Zobacz nasze zrealizowane projekty remontowe w Warszawie. Oferujemy kompleksowe usługi remontowe mieszkań, domów i obiektów komercyjnych. Przekonaj się o jakości naszej pracy.">
-  <section class="relative bg-primary">
-    <ContentLayout className="flex flex-col">
-      <H1 className="pt-14 text-center text-3xl font-bold">Realizacje</H1>
-      <ImageGallery client:load client:only />
+  description="Zobacz nasze zrealizowane projekty remontowe w Warszawie. Oferujemy kompleksowe usługi remontowe mieszkań, domów i obiektów komercyjnych. Przekonaj się o jakości naszej pracy."
+>
+  <section class="relative">
+    <ContentLayout className="flex max-w-full flex-col !px-0 !py-8">
+      <div class="bg-card py-12">
+        <div
+          class="mx-auto flex w-full max-w-7xl flex-col justify-between gap-x-12 md:items-center lg:flex-row"
+        >
+          <Image
+            src="/images/realizations.jpg"
+            alt="zdjęcie mieszkania, tło"
+            width={500}
+            height={700}
+            class="mx-auto aspect-square object-cover shadow-md sm:aspect-video md:rounded-[24px] lg:aspect-square"
+          />
+          <div
+            class="mx-auto flex max-w-[600px] flex-col justify-between gap-2 px-2 pb-12 pt-4 md:gap-5 md:py-10 lg:max-w-full"
+          >
+            <H1 className="text-start">Profesjonalne Remonty od A do Z</H1>
+            <Text
+              className="hidden break-words text-start font-medium md:text-xl lg:block"
+            >
+              Każdy projekt to dla nas nowe wyzwanie, które realizujemy z pełnym
+              zaangażowaniem i dbałością o detale. Nasze realizacje obejmują
+              kompleksowe remonty mieszkań, domów oraz lokali użytkowych.
+            </Text>
+
+            <div class="mb-2 flex flex-col gap-2 lg:mb-8">
+              <p class="flex items-start gap-2 text-xl font-semibold">
+                <CheckCircle
+                  className="stroke-3 mt-1 min-w-6  text-emerald-500"
+                /> Remonty mieszkań – Nowoczesne i funkcjonalne wnętrza dostosowane
+                do potrzeb klientów.
+              </p>
+              <p class="flex items-start gap-2 text-xl font-semibold">
+                <CheckCircle
+                  className="stroke-3 mt-1  min-w-6 text-emerald-500"
+                /> Sprawdzone materiały – Pracujemy na najlepszych produktach.
+              </p>
+              <p class="flex items-start gap-2 text-xl font-semibold">
+                <CheckCircle
+                  className="stroke-3 mt-1  min-w-6 text-emerald-500"
+                /> Gwarancja terminowości – Kończymy prace zgodnie z harmonogramem.
+              </p>
+              <p class="flex items-start gap-2 text-xl font-semibold">
+                <CheckCircle
+                  className="stroke-3 mt-1  min-w-6 text-emerald-500"
+                /> Łazienki i kuchnie – Estetyka i ergonomia w jednym, z wysokiej
+                klasy materiałami.
+              </p>
+              <p class="flex items-start gap-2 text-xl font-semibold">
+                <CheckCircle
+                  className="stroke-3 mt-1  min-w-6 text-emerald-500"
+                /> Remonty pod klucz – Od projektu po finalne wykończenie, bez stresu
+                dla klienta.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section class="pt-16">
+        <div class="flex flex-col items-center space-y-4 px-2.5">
+          <H2>Nasze Zrealizowane Projekty</H2>
+          <Text className="max-w-4xl text-start text-xl sm:text-center"
+            >Poniżej znajdziesz zdjęcia naszych ukończonych projektów. Przekonaj
+            się, jak możemy odmienić Twoje wnętrza!</Text
+          >
+        </div>
+        <ImageGallery client:load client:only="react" />
+      </section>
     </ContentLayout>
   </section>
 </MainLayout>

@@ -1,43 +1,39 @@
 ---
 // components
-import MainLayout from '@layouts/MainLayout.astro';
-import H1 from '@components/ui/H1.astro';
-import Text from '@components/ui/Text.astro';
-import ContentLayout from '@layouts/ContentLayout.astro';
+import MainLayout from "@layouts/MainLayout.astro";
+import H1 from "@components/ui/H1.astro";
+import Text from "@components/ui/Text.astro";
+import ContentLayout from "@layouts/ContentLayout.astro";
 // lib import
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 // assets
-import bgImage from '@assets/images/background/contact-bg.jpg';
+import bgImage from "@assets/images/background/contact-bg.jpg";
 import {
   phoneNumber,
   email,
   facebook,
   instagram,
-} from '@assets/contact-details';
-// contact info
-import phoneIcon from '@assets/images/icons/svg/contact/phone.svg';
-import mailIcon from '@assets/images/icons/svg/contact/mail.svg';
-import facebookIcon from '@assets/images/icons/svg/contact/facebook.svg';
-import instagramIcon from '@assets/images/icons/svg/contact/instagram.svg';
+} from "@assets/contact-details";
+import { Phone, Mail, Facebook, Instagram, CheckCircle } from "lucide-react";
 
 const contactDescriptionArr = [
   {
-    name: 'phone-number',
+    name: "phone-number",
     value: phoneNumber,
-    icon: phoneIcon,
-    action: 'tel',
+    icon: Phone,
+    action: "tel",
   },
-  { name: 'email', value: email, icon: mailIcon, action: 'mailto' },
+  { name: "email", value: email, icon: Mail, action: "mailto" },
   {
-    name: 'Swoje Ściany ',
+    name: "Swoje Ściany ",
     value: facebook,
-    icon: facebookIcon,
+    icon: Facebook,
     action: null,
   },
   {
-    name: 'swoje_sciany',
+    name: "swoje_sciany",
     value: instagram,
-    icon: instagramIcon,
+    icon: Instagram,
     action: null,
   },
 ];
@@ -45,32 +41,58 @@ const contactDescriptionArr = [
 
 <MainLayout
   title="Kontakt - Swoje Ściany"
-  description="Skontaktuj się z nami, aby omówić swoje potrzeby remontowe w Warszawie. Nasz zespół jest gotowy odpowiedzieć na wszystkie pytania i zapewnić profesjonalne doradztwo. Zadzwoń lub napisz do nas, aby umówić się na konsultację.">
-  <section class="relative bg-primary">
-    <ContentLayout className="flex flex-col gap-12">
-      <div class="z-20 grid h-[300px] place-items-center gap-8 pt-10">
+  description="Skontaktuj się z nami, aby omówić swoje potrzeby remontowe w Warszawie. Nasz zespół jest gotowy odpowiedzieć na wszystkie pytania i zapewnić profesjonalne doradztwo. Zadzwoń lub napisz do nas, aby umówić się na konsultację."
+>
+  <section class="relative">
+    <ContentLayout className="flex flex-col gap-12  !px-0">
+      <div
+        class="flex w-full flex-col justify-between gap-x-12 px-0 pb-0 md:items-center lg:flex-row"
+      >
         <Image
-          src={bgImage}
-          alt="tło"
-          class="absolute left-0 top-0 -z-10 h-[300px] w-screen object-cover shadow-[0_10px_80px_40px_rgba(0,0,0,0.3)] brightness-75 sm:h-screen sm:blur-sm"
+          src="/images/contact-bg.jpg"
+          alt="zdjęcie mieszkania, tło"
+          width={600}
+          height={400}
+          class="mx-auto aspect-video object-cover shadow-md sm:aspect-video md:rounded-[24px] lg:aspect-video"
         />
-        <H1 className="relative">Masz pytania? <br />Skontaktuj się z nami.</H1>
-        <Text className="relative  w-[min(500px,100%)] "
-          >Jeśli planujesz remont mieszkania czy budynku, chętnie poznamy
-          szczegóły Twojego projektu i zaproponujemy indywidualne podejście.
-          Skontaktuj się z nami, a my pomożemy Ci zrealizować Twoje marzenia o
-          idealnym wnętrzu!</Text
+        <div
+          class="mx-auto flex max-w-[600px] flex-col justify-between gap-2 px-2 pt-4 md:gap-5 md:py-10 lg:max-w-full"
         >
+          <H1 className="text-start"
+            >Skontaktuj się z Nami – Twój Remont Zaczyna Się Tutaj!</H1
+          >
+          <Text
+            className="hidden break-words text-start font-medium md:text-xl lg:block"
+          >
+            Masz pytania? Potrzebujesz wyceny? Jesteśmy tutaj, aby Ci pomóc!
+          </Text>
+
+          <div class="mb-2 flex flex-col gap-2 lg:mb-8">
+            <p class="flex items-center gap-2 text-xl font-semibold">
+              <CheckCircle className="stroke-3 text-emerald-500" /> Bezpłatna konsultacja
+              i wycena
+            </p>
+            <p class="flex items-center gap-2 text-xl font-semibold">
+              <CheckCircle className="stroke-3 text-emerald-500" /> Szybka odpowiedź
+            </p>
+            <p class="flex items-center gap-2 text-xl font-semibold">
+              <CheckCircle className="stroke-3 text-emerald-500" /> Indywidualne
+              podejście
+            </p>
+          </div>
+        </div>
       </div>
       <div
-        class="relative z-20 flex h-full translate-y-10 flex-col content-center items-center justify-center gap-7 sm:translate-y-0">
+        class="relative z-20 grid gap-4 px-2.5 sm:translate-y-0 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+      >
         {
-          contactDescriptionArr.map(({ name, value, icon, action }) => (
+          contactDescriptionArr.map(({ name, value, icon: Icon, action }) => (
             <a
               href={action ? `${action}: ${value}` : value}
-              target={action ? '_self' : '_blank'}
-              class="flex h-16 w-[min(500px,100%)] items-center justify-between overflow-hidden rounded-2xl border bg-accent/80 px-2 py-2 shadow-[0_0_10px_1px_rgba(0,0,0,0.5)] lg:p-5">
-              <Image src={icon} alt={`${name} icon`} class="w-14" />
+              target={action ? "_self" : "_blank"}
+              class="flex w-full flex-col  items-center justify-between overflow-hidden rounded-2xl border bg-primary/80 px-2 py-2 text-primary-foreground shadow-sm sm:w-auto lg:p-5"
+            >
+              <Icon className="w-8 h-8 stroke-[1.5px] " />
               <p class="w-full text-center text-base md:text-2xl">
                 {action ? value : name}
               </p>

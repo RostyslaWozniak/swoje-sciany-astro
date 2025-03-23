@@ -50,7 +50,7 @@ export const Navigation = () => {
                 <a
                   className={cn(
                     location.pathname.slice(0, 3) === path.slice(0, 3) &&
-                      "border-b-2 border-white",
+                      "border-b-2 border-primary text-primary",
                   )}
                   href={path}
                 >
@@ -76,7 +76,7 @@ export const Navigation = () => {
                   href={path}
                   className={cn(
                     location.pathname.slice(0, 3) === path.slice(0, 3) &&
-                      "border-b-2 border-white",
+                      "border-b-2 border-primary text-primary",
                   )}
                 >
                   {label}

@@ -4,14 +4,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#898989",
-        secondary: "#6C6C6B",
-        dark: "#434343",
-        light: "#B4B4B4",
-        accent: "#ec7a1c",
-      },
-      boxShadow: {
-        castom: "0px 0px 30px 1px rgba(0,0,0,0.4)",
+        background: "#F5F5F5",
+        foreground: "#333333",
+        primary: "#FF7A00",
+        "primary-foreground": "#FFFFFF",
+        secondary: "#505050",
+        "secondary-foreground": "#FFFFFF",
+        card: "#F2E9D9",
+        "card-foreground": "#54462C",
       },
     },
   },
