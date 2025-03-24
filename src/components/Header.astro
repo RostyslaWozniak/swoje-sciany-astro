@@ -1,12 +1,16 @@
 ---
-// components
 import { Navigation } from "@components/Navigation";
-// assets
-// import logo from "@assets/images/logo/logo.svg";
+import { cn } from "@utils/cn";
+import { IS_LOCAL_PROJECT, IS_DEMO_PROJECT } from "@utils/env";
 ---
 
 <header
-  class="fixed top-0 z-50 h-16 w-screen bg-card/30 shadow-md backdrop-blur"
+  class={cn(
+    "fixed top-0 z-50 h-16 w-screen bg-card/30 shadow-md backdrop-blur",
+    {
+      "top-10": IS_LOCAL_PROJECT || IS_DEMO_PROJECT,
+    }
+  )}
 >
   <div
     class="mx-auto flex h-full max-w-[1200px] items-center justify-between px-2.5 sm:px-5"

@@ -3,6 +3,7 @@ import MainHead from "@layouts/MainHead.astro";
 import Footer from "@components/Footer.astro";
 import Header from "@components/Header.astro";
 import { Cookies } from "@components/Cookies";
+import EnvBanner from "@components/EnvBanner.astro";
 
 const {
   title = "Swoje Ściany",
@@ -17,6 +18,7 @@ const {
   <body
     class="flex min-h-screen flex-col overflow-x-hidden bg-background text-foreground"
   >
+    <EnvBanner />
     <Header />
     <main
       class:list={[

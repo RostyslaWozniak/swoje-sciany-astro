@@ -1,0 +1,22 @@
+---
+import { IS_DEMO_PROJECT, IS_LOCAL_PROJECT } from "@utils/env";
+---
+
+{
+  IS_LOCAL_PROJECT && (
+    <div class="sticky top-0 z-[60] grid h-10 w-full place-items-center bg-black">
+      <div class="rounded-full bg-white px-2 text-black">
+        THIS IS A LOCAL PROJECT
+      </div>
+    </div>
+  )
+}
+{
+  IS_DEMO_PROJECT && (
+    <div class="sticky top-0 z-[60] grid h-10 w-full place-items-center bg-amber-600">
+      <div class="rounded-full bg-white px-2 text-black">
+        THIS IS A DEMO PROJECT
+      </div>
+    </div>
+  )
+}

@@ -44,7 +44,7 @@ export const Navigation = () => {
     <>
       {!matches && (
         <nav>
-          <ul className="flex items-center justify-center gap-16">
+          <ul className="flex items-center justify-center gap-16 ">
             {navItems.map(({ id, label, path }) => (
               <li key={id}>
                 <a
@@ -75,6 +75,7 @@ export const Navigation = () => {
                 <a
                   href={path}
                   className={cn(
+                    "text-white",
                     location.pathname.slice(0, 3) === path.slice(0, 3) &&
                       "border-b-2 border-primary text-primary",
                   )}
@@ -93,25 +94,25 @@ export const Navigation = () => {
         >
           <motion.span
             animate={{ rotateZ: toogled ? -45 : 0, y: toogled ? 8 : 0 }}
-            className="block h-0.5 w-full rounded-full bg-white"
+            className="block h-0.5 w-full rounded-full bg-primary"
           />
           <motion.span
             animate={{ width: toogled ? "0px" : "100%" }}
-            className="block h-0.5 w-full rounded-full bg-white"
+            className="block h-0.5 w-full rounded-full bg-primary"
           />
           <motion.span
             animate={{
               rotateZ: toogled ? 45 : 0,
               y: toogled ? -8 : 0,
             }}
-            className="block h-0.5 w-full rounded-full bg-white"
+            className="block h-0.5 w-full rounded-full bg-primary"
           />
         </div>
       )}
       {toogled && (
         <motion.div
           initial={{ opacity: 0 }}
-          animate={{ opacity: 0.7 }}
+          animate={{ opacity: 0.8 }}
           exit={{ opacity: 0 }}
           onClick={handleCloseNav}
           className="fixed left-0 top-0 -z-10 h-screen w-screen bg-black"
