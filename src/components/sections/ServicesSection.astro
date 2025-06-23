@@ -7,7 +7,7 @@ import ContentLayout from "@layouts/ContentLayout.astro";
 const services = await Astro.glob("src/pages/usługi/*.md");
 ---
 
-<section class="">
+<section class="bg-white">
   <ContentLayout className="flex flex-col items-center gap-12 py-10">
     <div class="flex flex-col items-center space-y-4">
       <H2>Nasze Usługi Remontowe – Pełna Oferta Remontów Mieszkań i Domów</H2>
@@ -23,7 +23,7 @@ const services = await Astro.glob("src/pages/usługi/*.md");
     />
     <a
       href="/usługi/"
-      class="-mt-4 w-full rounded-full bg-secondary px-10 pb-2.5 pt-2 text-center text-2xl text-background shadow-md duration-300 hover:bg-secondary/80 sm:w-auto"
+      class="-mt-4 w-full rounded-full border-2 border-primary px-10 pb-2.5 pt-2 text-center text-xl text-primary shadow-md duration-300 hover:bg-primary/10 sm:w-auto"
       >Zobacz więcej usług
     </a>
   </ContentLayout>

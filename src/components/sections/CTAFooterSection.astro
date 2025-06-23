@@ -1,0 +1,36 @@
+---
+import { email, phoneNumber } from "@assets/contact-details";
+import { PhoneIcon, MailIcon } from "lucide-react";
+---
+
+<section class="relative bg-secondary text-white md:py-24">
+  <div class="absolute inset-0 z-0">
+    <img
+      src="/images/cta-bg.jpg"
+      alt="Eleganckie wnętrze"
+      class="h-full w-full object-cover opacity-30"
+    />
+  </div>
+  <div class="container relative z-10 mx-auto px-4 py-16 text-center">
+    <h2 class="mb-6 text-3xl font-bold md:text-4xl">
+      Gotowy na remont marzeń?
+    </h2>
+    <p class="mx-auto mb-8 max-w-xl text-xl">
+      Skontaktuj się z nami już dziś i otrzymaj bezpłatną konsultację oraz
+      wycenę.
+    </p>
+
+    <div
+      class="mb-8 flex flex-col items-center justify-center gap-4 md:flex-row"
+    >
+      <a href={`tel:${phoneNumber}`} class="flex items-center gap-2">
+        <PhoneIcon className="h-5 w-5" />
+        <span>{phoneNumber}</span>
+      </a>
+      <a href={`mailto:${email}`} class="flex items-center gap-2">
+        <MailIcon className="h-5 w-5" />
+        <span>{email}</span>
+      </a>
+    </div>
+  </div>
+</section>

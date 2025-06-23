@@ -8,6 +8,11 @@ type Props = {
 const { className } = Astro.props as Props;
 ---
 
-<h2 class:list={cn("text-3xl font-bold md:text-center md:text-5xl", className)}>
+<h2
+  class:list={cn(
+    "mb-3 text-3xl font-bold md:text-center md:text-4xl",
+    className
+  )}
+>
   <slot />
 </h2>

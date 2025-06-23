@@ -14,17 +14,20 @@ const services = await Astro.glob("src/pages/usługi/*.md");
   title="Usługi - Swoje Ściany"
   description="Poznaj naszą szeroką ofertę usług remontowych w Warszawie. Oferujemy kompleksowe usługi dekoracyjne, elektryczne, glazurnicze, hydrauliczne, podłogowe, tynkarskie i wykończeniowe. Zaufaj naszym doświadczonym fachowcom i skontaktuj się z nami już dziś!"
 >
-  <ContentLayout className="!px-0">
+  <ContentLayout className="!px-0 pb-4">
     <ServicesHeroSection />
-    <section class="my-12 space-y-12 px-2.5">
-      <H2>Nasze Usługi Remontowe</H2>
-      <DisplayServices
-        data={services}
-        className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3"
-        imageSize={{ width: 300, height: 230 }}
-      />
-    </section>
-
-    <AboutUs />
   </ContentLayout>
+  <div class="bg-white">
+    <ContentLayout className="!px-0">
+      <section class="space-y-12 px-4">
+        <H2>Nasze Usługi Remontowe</H2>
+        <DisplayServices
+          data={services}
+          className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3"
+          imageSize={{ width: 300, height: 230 }}
+        />
+      </section>
+    </ContentLayout>
+  </div>
+  <AboutUs />
 </MainLayout>

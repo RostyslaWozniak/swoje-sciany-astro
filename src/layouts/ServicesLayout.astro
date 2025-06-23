@@ -15,26 +15,42 @@ const anotherServices = services.filter(
 );
 ---
 
-<MainLayout className=" py-20" title={`Usługi ${title}`} {description}>
+<MainLayout className="pt-14" title={`Usługi ${title}`} {description}>
+  <section
+    class="relative flex min-h-96 items-center justify-center bg-gray-900 py-12 md:h-[600px]"
+  >
+    <div
+      class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-70"
+      style={`background-image: url(${image.url})`}
+    >
+    </div>
+    <div class="absolute inset-0 bg-black opacity-50"></div>
+    <div class="relative z-10 px-4 text-center text-white sm:px-6 lg:px-8">
+      <H1 className="mb-8">Usługi {title}</H1>
+      <p class="mx-auto mb-8 max-w-3xl text-white/90 md:text-xl">
+        {description}
+      </p>
+      <a href="/kontakt">
+        <button
+          class="transform rounded-full bg-primary px-8 py-3 text-lg font-bold text-white shadow-lg transition-all duration-300 hover:bg-primary/80"
+        >
+          Zamów usługę
+        </button>
+      </a>
+    </div>
+  </section>
   <ContentLayout className="w-full max-w-[1500px] space-y-20 ">
-    <H1>Usługi {(<span class="text-primary">{title}</span>)}</H1>
     <div
       class="flex w-full flex-col items-center justify-between gap-10 lg:flex-row lg:items-start"
     >
       <div
         class="w-full space-y-1 sm:prose-base prose-h3:text-foreground prose-strong:text-primary"
       >
+        <H2 className="!text-start">Lista usług: </H2>
         <slot />
       </div>
       <div class="flex max-w-[600px] flex-col items-center space-y-12">
-        <Image
-          width={500}
-          height={300}
-          src={image.url}
-          alt={`obrazek ${title}`}
-          class="hidden aspect-video w-full rounded-2xl border-2 object-cover sm:block"
-        />
-        <H2>Sprawdź inne nasze usługi</H2>
+        <H2 className="!text-start">Sprawdź inne nasze usługi</H2>
 
         <DisplayServices
           data={anotherServices}

@@ -30,7 +30,10 @@ import {
       <div class="flex items-center gap-4">
         {
           navigation.map(({ href, name }) => (
-            <a href={href} class="capitalize">
+            <a
+              href={href}
+              class="capitalize text-gray-300 duration-300 hover:text-gray-50"
+            >
               {name}
             </a>
           ))
@@ -40,23 +43,52 @@ import {
     <div class="space-y-4">
       <h2 class="text-lg font-semibold">Kontakt</h2>
       <div class="flex items-center gap-4">
-        <a href={`mailto:${email}`} target="_blank" aria-label="instagram">
+        <a
+          href={`mailto:${email}`}
+          target="_blank"
+          aria-label="instagram"
+          class="text-gray-300 duration-300 hover:text-gray-50"
+        >
           <Mail />
         </a>
-        <a href={`tel:${phoneNumber}`} target="_blank" aria-label="facebook">
+        <a
+          href={`tel:${phoneNumber}`}
+          target="_blank"
+          aria-label="facebook"
+          class="text-gray-300 duration-300 hover:text-gray-50"
+        >
           <Phone />
         </a>
       </div>
     </div>
+
     <div class="space-y-4">
       <h2 class="text-lg font-semibold">Social media</h2>
       <div class="flex items-center gap-4">
-        <a href={instagram} target="_blank" aria-label="instagram">
+        <a
+          href={instagram}
+          target="_blank"
+          aria-label="instagram"
+          class="text-gray-300 duration-300 hover:text-gray-50"
+        >
           <Instagram />
         </a>
-        <a href={facebook} target="_blank" aria-label="facebook">
+        <a
+          href={facebook}
+          target="_blank"
+          aria-label="facebook"
+          class="text-gray-300 duration-300 hover:text-gray-50"
+        >
           <Facebook />
         </a>
+      </div>
+    </div>
+    <div>
+      <h4 class="mb-4 text-lg font-semibold">Godziny pracy</h4>
+      <div class="space-y-2 text-gray-300">
+        <p>Pon - Pt: 8:00 - 18:00</p>
+        <p>Sobota: 9:00 - 15:00</p>
+        <p>Niedziela: Zamknięte</p>
       </div>
     </div>
   </div>

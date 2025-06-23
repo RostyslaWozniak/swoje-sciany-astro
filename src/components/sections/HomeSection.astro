@@ -22,7 +22,7 @@ import { CheckCircle } from "lucide-react";
       class="mx-auto aspect-square object-cover shadow-md sm:aspect-video md:rounded-[24px] lg:aspect-square"
     />
     <div
-      class="mx-auto flex max-w-[600px] flex-col justify-between gap-2 px-2 pb-12 pt-4 md:gap-5 md:py-10 lg:max-w-full"
+      class="mx-auto flex max-w-[600px] flex-col justify-between gap-2 px-4 pb-12 pt-4 md:gap-5 md:py-10 lg:max-w-full"
     >
       <H1 className="text-start">Profesjonalne Remonty Mieszkań i Domów</H1>
       <Text
@@ -33,15 +33,17 @@ import { CheckCircle } from "lucide-react";
         konkurencyjnym cenom jesteśmy najlepszym wyborem na rynku.
       </Text>
 
-      <div class="mb-2 flex flex-col gap-2 lg:mb-8">
-        <p class="flex items-center gap-2 text-xl font-semibold">
-          <CheckCircle className="stroke-3 text-emerald-500" /> Gwarancja jakości
+      <div class="mb-2 flex flex-col gap-2 lg:mb-4">
+        <p class="flex items-center gap-3 text-lg text-gray-600">
+          <CheckCircle size={20} className="stroke-3 text-emerald-500" /> Gwarancja
+          jakości
         </p>
-        <p class="flex items-center gap-2 text-xl font-semibold">
-          <CheckCircle className="stroke-3 text-emerald-500" /> Terminowość
+        <p class="flex items-center gap-3 text-lg text-gray-600">
+          <CheckCircle size={20} className="stroke-3 text-emerald-500" /> Terminowość
         </p>
-        <p class="flex items-center gap-2 text-xl font-semibold">
-          <CheckCircle className="stroke-3 text-emerald-500" /> Transparentna wycena
+        <p class="flex items-center gap-3 text-lg text-gray-600">
+          <CheckCircle size={20} className="stroke-3 text-emerald-500" /> Transparentna
+          wycena
         </p>
       </div>
       <HomeBtn client:load />

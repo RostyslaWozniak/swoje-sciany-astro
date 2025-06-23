@@ -1,41 +1,10 @@
 ---
-// components
 import MainLayout from "@layouts/MainLayout.astro";
 import H1 from "@components/ui/H1.astro";
 import Text from "@components/ui/Text.astro";
 import ContentLayout from "@layouts/ContentLayout.astro";
-// lib import
 import { Image } from "astro:assets";
-// assets
-import {
-  phoneNumber,
-  email,
-  facebook,
-  instagram,
-} from "@assets/contact-details";
-import { Phone, Mail, Facebook, Instagram, CheckCircle } from "lucide-react";
-
-const contactDescriptionArr = [
-  {
-    name: "phone-number",
-    value: phoneNumber,
-    icon: Phone,
-    action: "tel",
-  },
-  { name: "email", value: email, icon: Mail, action: "mailto" },
-  {
-    name: "Swoje Ściany ",
-    value: facebook,
-    icon: Facebook,
-    action: null,
-  },
-  {
-    name: "swoje_sciany",
-    value: instagram,
-    icon: Instagram,
-    action: null,
-  },
-];
+import { CheckCircle } from "lucide-react";
 ---
 
 <MainLayout
@@ -45,7 +14,7 @@ const contactDescriptionArr = [
   <section class="relative">
     <ContentLayout className="flex flex-col gap-12  !px-0">
       <div
-        class="flex w-full flex-col justify-between gap-x-12 px-0 pb-0 md:items-center lg:mb-12 lg:flex-row"
+        class="flex w-full flex-col justify-between gap-x-12 px-0 pb-0 md:items-center lg:flex-row"
       >
         <Image
           src="/images/contact-bg.jpg"
@@ -67,37 +36,20 @@ const contactDescriptionArr = [
           </Text>
 
           <div class="mb-2 flex flex-col gap-2 lg:mb-8">
-            <p class="flex items-center gap-2 text-xl font-semibold">
-              <CheckCircle className="stroke-3 text-emerald-500" /> Bezpłatna konsultacja
-              i wycena
+            <p class="flex items-center gap-2 text-lg text-gray-600">
+              <CheckCircle size={20} className="stroke-3 text-emerald-500 " /> Bezpłatna
+              konsultacja i wycena
             </p>
-            <p class="flex items-center gap-2 text-xl font-semibold">
-              <CheckCircle className="stroke-3 text-emerald-500" /> Szybka odpowiedź
+            <p class="flex items-center gap-2 text-lg text-gray-600">
+              <CheckCircle size={20} className="stroke-3 text-emerald-500 " /> Szybka
+              odpowiedź
             </p>
-            <p class="flex items-center gap-2 text-xl font-semibold">
-              <CheckCircle className="stroke-3 text-emerald-500" /> Indywidualne
+            <p class="flex items-center gap-2 text-lg text-gray-600">
+              <CheckCircle size={20} className="stroke-3 text-emerald-500 " /> Indywidualne
               podejście
             </p>
           </div>
         </div>
-      </div>
-      <div
-        class="relative z-20 grid gap-4 px-2.5 sm:translate-y-0 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
-      >
-        {
-          contactDescriptionArr.map(({ name, value, icon: Icon, action }) => (
-            <a
-              href={action ? `${action}: ${value}` : value}
-              target={action ? "_self" : "_blank"}
-              class="flex w-full flex-col  items-center justify-between overflow-hidden rounded-2xl border-2 border-card-foreground/40 bg-primary/80 px-2 py-2 text-primary-foreground shadow-sm sm:w-auto lg:p-5"
-            >
-              <Icon className="w-8 h-8 stroke-[1.5px] " />
-              <p class="w-full text-center text-base md:text-2xl">
-                {action ? value : name}
-              </p>
-            </a>
-          ))
-        }
       </div>
     </ContentLayout>
   </section>

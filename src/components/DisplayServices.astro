@@ -27,14 +27,12 @@ const { data, className, imageSize, labelClassName } = Astro.props;
           alt={frontmatter.image.alt}
           class="z-10 aspect-video h-full w-full   object-cover  duration-300   group-hover:scale-105"
         />
-        <H3
-          className={cn(
-            "z-10 w-full bg-card py-4 font-semibold text-foreground",
-            labelClassName
-          )}
+        <div
+          class={cn("z-10 w-full bg-card p-4 font-semibold ", labelClassName)}
         >
-          {frontmatter.title}
-        </H3>
+          <H3 className="text-start mb-2">{frontmatter.title}</H3>
+          <p class="line-clamp-2 text-gray-600">{frontmatter.description}</p>
+        </div>
       </a>
     ))
   }

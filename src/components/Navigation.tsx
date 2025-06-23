@@ -94,18 +94,18 @@ export const Navigation = () => {
         >
           <motion.span
             animate={{ rotateZ: toogled ? -45 : 0, y: toogled ? 8 : 0 }}
-            className="block h-0.5 w-full rounded-full bg-primary"
+            className="block h-0.5 w-full rounded-full bg-foreground"
           />
           <motion.span
             animate={{ width: toogled ? "0px" : "100%" }}
-            className="block h-0.5 w-full rounded-full bg-primary"
+            className="block h-0.5 w-full rounded-full bg-foreground"
           />
           <motion.span
             animate={{
               rotateZ: toogled ? 45 : 0,
               y: toogled ? -8 : 0,
             }}
-            className="block h-0.5 w-full rounded-full bg-primary"
+            className="block h-0.5 w-full rounded-full bg-foreground"
           />
         </div>
       )}

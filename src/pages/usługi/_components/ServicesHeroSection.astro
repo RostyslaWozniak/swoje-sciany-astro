@@ -7,19 +7,19 @@ import { CheckCircle } from "lucide-react";
 
 <section class="">
   <div
-    class="flex w-full flex-col justify-between gap-x-12 md:mb-24 md:items-center lg:flex-row"
+    class="flex w-full flex-col justify-between gap-x-12 md:items-center lg:flex-row"
   >
     <Image
       src="/images/services-hero.jpg"
       alt="zdjęcie mieszkania, tło"
-      width={500}
+      width={550}
       height={700}
       class="mx-auto aspect-square object-cover shadow-md sm:aspect-video md:rounded-[24px] lg:aspect-square"
     />
     <div
-      class="mx-auto flex max-w-[600px] flex-col justify-between gap-2 px-2 pb-12 pt-4 md:gap-5 md:py-10 lg:max-w-full"
+      class="mx-auto flex max-w-[600px] flex-col justify-between gap-2 px-4 pb-12 pt-4 md:gap-5 md:py-10 lg:max-w-full"
     >
-      <H1 className="text-start"
+      <H1 className="mb-4 text-start"
         >Kompleksowe Usługi Remontowe dla Twojego Domu i Firmy</H1
       >
       <Text
@@ -30,17 +30,23 @@ import { CheckCircle } from "lucide-react";
       </Text>
 
       <div class="mb-2 flex flex-col gap-2 lg:mb-8">
-        <p class="flex items-start gap-2 text-xl font-semibold">
-          <CheckCircle className="stroke-3 mt-1 min-w-6  text-emerald-500" /> Kompleksowe
-          podejście – Od projektu po finalne wykończenie.
+        <p class="flex items-start gap-2 text-xl font-semibold text-gray-600">
+          <CheckCircle
+            size={20}
+            className="stroke-3 mt-1 min-w-6  text-emerald-500 "
+          /> Kompleksowe podejście – Od projektu po finalne wykończenie.
         </p>
-        <p class="flex items-start gap-2 text-xl font-semibold">
-          <CheckCircle className="stroke-3 mt-1  min-w-6 text-emerald-500" /> Sprawdzone
-          materiały – Pracujemy na najlepszych produktach.
+        <p class="flex items-start gap-2 text-xl font-semibold text-gray-600">
+          <CheckCircle
+            size={20}
+            className="stroke-3 mt-1  min-w-6 text-emerald-500"
+          /> Sprawdzone materiały – Pracujemy na najlepszych produktach.
         </p>
-        <p class="flex items-start gap-2 text-xl font-semibold">
-          <CheckCircle className="stroke-3 mt-1  min-w-6 text-emerald-500" /> Gwarancja
-          terminowości – Kończymy prace zgodnie z harmonogramem.
+        <p class="flex items-start gap-2 text-xl font-semibold text-gray-600">
+          <CheckCircle
+            size={20}
+            className="stroke-3 mt-1  min-w-6 text-emerald-500"
+          /> Gwarancja terminowości – Kończymy prace zgodnie z harmonogramem.
         </p>
       </div>
     </div>

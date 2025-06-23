@@ -43,11 +43,11 @@ const howToStartData = [
         konsultacji aż po gotowe mieszkanie, dbamy o każdy etap prac.</Text
       >
     </div>
-    <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+    <div class="grid grid-cols-1 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
       {
         howToStartData.map(({ id, title, text, icon: Icon }) => (
           <div class="flex max-w-sm flex-col items-center space-y-2">
-            <Icon className="h-20 w-20 stroke-[1.5px] text-card-foreground" />
+            <Icon className="h-14 w-14 md:h-20 md:w-20 stroke-[1.5px] text-foreground" />
             <div class="space-y-1">
               <H3 className=" font-semibold">
                 {id}. {title}
