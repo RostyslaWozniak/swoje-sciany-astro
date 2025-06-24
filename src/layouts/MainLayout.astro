@@ -4,6 +4,8 @@ import Footer from "@components/Footer.astro";
 import Header from "@components/Header.astro";
 import { Cookies } from "@components/Cookies";
 import CTAFooterSection from "@components/sections/CTAFooterSection.astro";
+import "@fontsource/inter";
+import "@fontsource/montserrat";
 
 const {
   title = "Swoje Ściany",
@@ -16,7 +18,7 @@ const {
 <html lang="pl">
   <MainHead {title} {description} />
   <body
-    class="flex min-h-screen flex-col overflow-x-hidden bg-background text-foreground"
+    class="font-inter flex min-h-screen flex-col overflow-x-hidden bg-background text-foreground"
   >
     <Header />
     <main

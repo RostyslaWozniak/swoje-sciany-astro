@@ -1,6 +1,8 @@
 /** @type {import('tailwindcss').Config} */
+
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
+
   theme: {
     extend: {
       colors: {
@@ -10,9 +12,13 @@ export default {
         "primary-foreground": "#FFFFFF",
         secondary: "#505050",
         "secondary-foreground": "#FFFFFF",
-        card: "#F2E9D9",
+        card: "#FF7A0010",
         "card-foreground": "#54462C",
       },
+    },
+    fontFamily: {
+      inter: ["Inter", "sans"],
+      montserrat: ["Montserrat", "sans"],
     },
   },
   plugins: [
